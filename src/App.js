@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, BookOpen, Award, Briefcase, ChevronRight, Users, Star, TrendingUp, Moon, Sun, Sparkles, Zap, Target, Clock, Mail, Phone, User, GraduationCap, Building2, CheckCircle2, ArrowRight, MapPin } from 'lucide-react';
 import logo from './logo_delta.png';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function ModernTrainingCenter() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -2151,6 +2152,8 @@ export default function ModernTrainingCenter() {
           animation: swing 2s ease-in-out infinite;
         }
       `}</style>
+      <SpeedInsights />
     </div>
+    
   );
 }
