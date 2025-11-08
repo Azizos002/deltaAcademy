@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home Page -->
+  <url>
+    <loc>https://deltaacademy.tn/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deltaacademy.tn/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://deltaacademy.tn/fr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://deltaacademy.tn/ar" />
+  </url>
+  
+  <!-- Courses Page -->
+  <url>
+    <loc>https://deltaacademy.tn/courses</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deltaacademy.tn/courses" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://deltaacademy.tn/fr/courses" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://deltaacademy.tn/ar/courses" />
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://deltaacademy.tn/about</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deltaacademy.tn/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://deltaacademy.tn/fr/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://deltaacademy.tn/ar/about" />
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://deltaacademy.tn/contact</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deltaacademy.tn/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://deltaacademy.tn/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://deltaacademy.tn/ar/contact" />
+  </url>
+</urlset>

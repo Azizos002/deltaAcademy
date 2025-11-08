@@ -582,7 +582,7 @@ export default function ModernTrainingCenter() {
       title: "Certified Courses",
       subtitle: "For Students & Certification Seekers",
       icon: Award,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[#2970ae] to-[#ec960b]",
       domains: [
         { 
           name: "Digital Marketing", 
@@ -618,7 +618,7 @@ export default function ModernTrainingCenter() {
       title: "Corporate Training",
       subtitle: "For Working Professionals",
       icon: Briefcase,
-      color: "from-purple-500 to-pink-500",
+      color: "from-[#ec960b] to-[#c17b3f]",
       domains: [
         { 
           name: "Accounting & Finance", 
@@ -694,7 +694,7 @@ export default function ModernTrainingCenter() {
     card: isDark ? 'bg-gray-800' : 'bg-white',
     cardHover: isDark ? 'hover:bg-gray-750' : 'hover:bg-gray-50',
     border: isDark ? 'border-gray-700' : 'border-gray-200',
-    gradient: isDark ? 'from-gray-800 via-gray-900 to-black' : 'from-blue-50 via-purple-50 to-pink-50',
+    gradient: isDark ? 'from-gray-800 via-gray-900 to-black' : 'from-[#2970ae]/10 via-[#ec960b]/10 to-[#c17b3f]/10',
     navBg: isDark ? 'bg-gray-900/95' : 'bg-white/95'
   };
 
@@ -728,7 +728,7 @@ export default function ModernTrainingCenter() {
                 alt="Delta Academy Logo"
                 className="w-12 h-12 object-contain transform group-hover:scale-110 transition-transform duration-300"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                 {t.brand}
               </span>
             </div>
@@ -743,15 +743,15 @@ export default function ModernTrainingCenter() {
                 <button
                   key={item.key}
                   onClick={() => navigateTo(item.key)}
-                  className={`${theme.text} hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 transition-all font-medium relative group`}
+                  className={`${theme.text} hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2970ae] hover:to-[#ec960b] transition-all font-medium relative group`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2970ae] to-[#ec960b] group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
               <button
                 onClick={() => handleEnroll()}
-                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-2.5 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all font-semibold"
+                className="bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-6 py-2.5 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all font-semibold"
               >
                 {t.enrollNow}
               </button>
@@ -763,7 +763,7 @@ export default function ModernTrainingCenter() {
                   className={`px-4 py-2.5 rounded-full ${theme.card} ${theme.border} border transition-all hover:scale-105 hover:shadow-lg flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 font-semibold group`}
                 >
                   <span className="text-2xl">{languages.find(l => l.code === language)?.flag}</span>
-                  <span className={`text-sm ${theme.text} group-hover:text-purple-600 transition-colors`}>
+                  <span className={`text-sm ${theme.text} group-hover:text-[#ec960b] transition-colors`}>
                     {language.toUpperCase()}
                   </span>
                   <ChevronRight className={`${theme.textSecondary} transform ${showLangMenu ? 'rotate-90' : 'rotate-0'} transition-transform`} size={16} />
@@ -780,7 +780,7 @@ export default function ModernTrainingCenter() {
                           setLanguage(lang.code);
                           setShowLangMenu(false);
                         }}
-                        className={`w-full px-4 py-3 flex items-center justify-between ${language === lang.code ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' : `${theme.text} hover:bg-gray-100 dark:hover:bg-gray-700`} transition-all`}
+                        className={`w-full px-4 py-3 flex items-center justify-between ${language === lang.code ? 'bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white' : `${theme.text} hover:bg-gray-100 dark:hover:bg-gray-700`} transition-all`}
                       >
                         <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
                           <span className="text-2xl">{lang.flag}</span>
@@ -799,7 +799,7 @@ export default function ModernTrainingCenter() {
                 onClick={() => setIsDark(!isDark)}
                 className={`p-2.5 rounded-full ${theme.card} ${theme.border} border transition-all hover:scale-110`}
               >
-                {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-purple-600" />}
+                {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-[#ec960b]" />}
               </button>
             </div>
 
@@ -824,14 +824,14 @@ export default function ModernTrainingCenter() {
                 <button
                   key={item.key}
                   onClick={() => navigateTo(item.key)}
-                  className={`block w-full text-left px-4 py-2 ${theme.text} hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white rounded-lg transition-all`}
+                  className={`block w-full text-left px-4 py-2 ${theme.text} hover:bg-gradient-to-r hover:from-[#2970ae] hover:to-[#ec960b] hover:text-white rounded-lg transition-all`}
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => handleEnroll()}
-                className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-2.5 rounded-full font-semibold"
+                className="w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-6 py-2.5 rounded-full font-semibold"
               >
                 {t.enrollNow}
               </button>
@@ -846,7 +846,7 @@ export default function ModernTrainingCenter() {
                       setLanguage(lang.code);
                       setIsMenuOpen(false);
                     }}
-                    className={`w-full flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3 px-4 py-2 ${language === lang.code ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' : `${theme.text} hover:bg-gray-100 dark:hover:bg-gray-700`} rounded-lg transition-all`}
+                    className={`w-full flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3 px-4 py-2 ${language === lang.code ? 'bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white' : `${theme.text} hover:bg-gray-100 dark:hover:bg-gray-700`} rounded-lg transition-all`}
                   >
                     <span className="text-2xl">{lang.flag}</span>
                     <span className="font-medium">{lang.name}</span>
@@ -858,7 +858,7 @@ export default function ModernTrainingCenter() {
                 onClick={() => setIsDark(!isDark)}
                 className={`w-full flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 px-4 py-2 ${theme.card} ${theme.border} border rounded-lg`}
               >
-                {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-purple-600" />}
+                {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-[#ec960b]" />}
                 <span className={theme.text}>{isDark ? t.lightMode : t.darkMode}</span>
               </button>
             </div>
@@ -878,7 +878,7 @@ export default function ModernTrainingCenter() {
           className={`${theme.card} rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-500`}
           style={{ animation: 'slideUp 0.5s ease-out' }}
         >
-          <div className="sticky top-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-6 rounded-t-3xl z-10">
+          <div className="sticky top-0 bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] p-6 rounded-t-3xl z-10">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className={`text-3xl font-bold text-white flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
@@ -910,7 +910,7 @@ export default function ModernTrainingCenter() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="John Doe"
                     />
                   </div>
@@ -925,7 +925,7 @@ export default function ModernTrainingCenter() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="john@example.com"
                     />
                   </div>
@@ -941,7 +941,7 @@ export default function ModernTrainingCenter() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder="+216 12 345 678"
                   />
                 </div>
@@ -956,7 +956,7 @@ export default function ModernTrainingCenter() {
                       required
                       value={formData.category}
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     >
                       <option value="">Select category</option>
                       <option value="Certified Courses">Certified Courses</option>
@@ -973,7 +973,7 @@ export default function ModernTrainingCenter() {
                       type="text"
                       value={formData.domain}
                       onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="e.g., Web Development"
                     />
                   </div>
@@ -984,7 +984,7 @@ export default function ModernTrainingCenter() {
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     rows="4"
                     placeholder="Tell us about your goals and expectations..."
                   ></textarea>
@@ -993,7 +993,7 @@ export default function ModernTrainingCenter() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
+                  className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
                 >
                   {isSubmitting ? (
                     <>
@@ -1028,32 +1028,63 @@ export default function ModernTrainingCenter() {
     <div className={`pt-16 ${theme.bg} transition-colors duration-500`}>
       {/* Hero Section */}
       <div className={`relative min-h-screen overflow-hidden bg-gradient-to-br ${theme.gradient}`}>
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full blur-3xl ${isDark ? 'opacity-20' : 'opacity-30'}`}
-              style={{
-                width: `${200 + i * 50}px`,
-                height: `${200 + i * 50}px`,
-                left: `${(i * 15) % 100}%`,
-                top: `${(i * 20) % 100}%`,
-                background: `linear-gradient(${45 + i * 30}deg,
-                  ${i % 3 === 0 ? 'rgba(59, 130, 246, 0.5)' : i % 3 === 1 ? 'rgba(168, 85, 247, 0.5)' : 'rgba(236, 72, 153, 0.5)'})`,
-                animation: `floatBubble ${8 + i * 2}s ease-in-out infinite`,
-                animationDelay: `${i * 0.5}s`
-              }}
-            />
-          ))}
+        {/* Horizontal Scrolling Gallery Background */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          {/* Overlay for better text readability */}
+          <div className={`absolute inset-0 z-[5] bg-gradient-to-br ${isDark ? 'from-gray-900/70 via-gray-900/50 to-gray-900/70' : 'from-white/70 via-white/50 to-white/70'}`}></div>
+          
+          {/* Scrolling Gallery Container */}
+          <div className="absolute inset-0 gallery-scroll-container">
+            {/* First set of images */}
+            <div className="gallery-track">
+              {[
+                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop'
+              ].map((imageUrl, i) => (
+                <div key={`img-${i}`} className="gallery-image-wrapper">
+                  <img
+                    src={imageUrl}
+                    alt={`Gallery ${i + 1}`}
+                    className="gallery-image"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless infinite loop */}
+              {[
+                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+                'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop'
+              ].map((imageUrl, i) => (
+                <div key={`img-dup-${i}`} className="gallery-image-wrapper">
+                  <img
+                    src={imageUrl}
+                    alt={`Gallery ${i + 1}`}
+                    className="gallery-image"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
+        <div className="relative z-[20] flex items-center justify-center min-h-screen px-4">
           <div className="text-center max-w-5xl mx-auto animate-fadeInUp">
             <div className="mb-6 animate-float-gentle">
-              <Sparkles size={48} className="mx-auto text-purple-500 animate-swing" />
+              <Sparkles size={48} className="mx-auto text-[#ec960b] animate-swing" />
             </div>
             <h1 className={`text-5xl md:text-7xl lg:text-8xl font-black mb-6 ${theme.text} leading-tight`}>
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                 {t.heroTitle1}
               </span>
               <br />
@@ -1065,7 +1096,7 @@ export default function ModernTrainingCenter() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={() => handleEnroll()}
-                className={`bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
+                className={`bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
               >
                 <span>{t.startLearning}</span>
                 <ArrowRight />
@@ -1118,7 +1149,7 @@ export default function ModernTrainingCenter() {
                   <p className={`${theme.textSecondary} text-sm mb-6`}>
                     {category.domains.length} {t.specializedDomains}
                   </p>
-                  <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-purple-500 font-semibold group-hover:translate-x-2 transition-transform`}>
+                  <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-[#ec960b] font-semibold group-hover:translate-x-2 transition-transform`}>
                     <span>{t.exploreDomains}</span>
                     <ArrowRight size={20} />
                   </div>
@@ -1130,7 +1161,7 @@ export default function ModernTrainingCenter() {
       </div>
 
       {/* Quick Stats */}
-      <div className={`py-20 bg-gradient-to-r ${isDark ? 'from-gray-800 to-gray-900' : 'from-blue-500 to-purple-600'}`}>
+      <div className={`py-20 bg-gradient-to-r ${isDark ? 'from-gray-800 to-gray-900' : 'from-[#2970ae] to-[#ec960b]'}`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -1179,7 +1210,7 @@ export default function ModernTrainingCenter() {
                     animation: `slideInRotate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.2}s both`
                   }}
                 >
-                  <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-purple-500/50 transition-shadow duration-500">
+                  <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-[#ec960b]/50 transition-shadow duration-500">
                     <img
                       src={formation.image}
                       alt={formation.title}
@@ -1210,7 +1241,7 @@ export default function ModernTrainingCenter() {
                     </div>
 
                     {/* Decorative Corner */}
-                    <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-500 shadow-lg">
+                    <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[#2970ae] to-[#ec960b] rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-500 shadow-lg">
                       <Sparkles className="text-white" size={24} />
                     </div>
                   </div>
@@ -1221,7 +1252,7 @@ export default function ModernTrainingCenter() {
           <div className="text-center">
             <button
               onClick={() => navigateTo('about')}
-              className={`bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto animate-pulse-slow`}
+              className={`bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto animate-pulse-slow`}
             >
               <span>{t.viewAllStories}</span>
               <ArrowRight />
@@ -1252,14 +1283,14 @@ export default function ModernTrainingCenter() {
                     animation: `slideUp 0.6s ease-out ${i * 0.1}s both`
                   }}
                 >
-                  <DomainIcon className="text-purple-500 mb-4 group-hover:scale-110 transition-transform" size={40} />
+                  <DomainIcon className="text-[#ec960b] mb-4 group-hover:scale-110 transition-transform" size={40} />
                   <h4 className={`text-xl font-bold ${theme.text} mb-2`}>{domain.name}</h4>
                   <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-sm ${theme.textSecondary} mb-3`}>
                     <Clock size={16} />
                     <span>{domain.duration}</span>
                   </div>
                   <div className={`text-xs ${theme.textSecondary} mb-4`}>{domain.modules.length} {t.modules}</div>
-                  <button className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
+                  <button className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
                     {t.enrollNow}
                   </button>
                 </div>
@@ -1270,7 +1301,7 @@ export default function ModernTrainingCenter() {
       </div>
 
       {/* Final CTA */}
-      <div className={`py-20 bg-gradient-to-br ${isDark ? 'from-purple-900 via-blue-900 to-pink-900' : 'from-blue-500 via-purple-500 to-pink-500'}`}>
+      <div className={`py-20 bg-gradient-to-br ${isDark ? 'from-[#2970ae]/80 via-[#ec960b]/80 to-[#c17b3f]/80' : 'from-[#2970ae] via-[#ec960b] to-[#c17b3f]'}`}>
         <div className="max-w-4xl mx-auto text-center px-4">
           <Sparkles size={64} className="mx-auto mb-6 text-white" />
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -1281,7 +1312,7 @@ export default function ModernTrainingCenter() {
           </p>
           <button
             onClick={() => handleEnroll()}
-            className={`bg-white text-purple-600 px-12 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto`}
+            className={`bg-white text-[#ec960b] px-12 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto`}
           >
             <span>{t.getStartedToday}</span>
             <ArrowRight />
@@ -1317,7 +1348,7 @@ export default function ModernTrainingCenter() {
                     <div className={`text-sm ${theme.textSecondary} mb-6`}>
                       {category.domains.length} specialized domains • Expert instructors
                     </div>
-                    <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-purple-500 font-bold text-lg group-hover:translate-x-2 transition-transform`}>
+                    <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-[#ec960b] font-bold text-lg group-hover:translate-x-2 transition-transform`}>
                       <span>View All Domains</span>
                       <ArrowRight size={24} />
                     </div>
@@ -1332,7 +1363,7 @@ export default function ModernTrainingCenter() {
           <>
             <button 
               onClick={() => setSelectedCategory(null)}
-              className={`mb-8 ${theme.text} hover:text-purple-500 font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-lg transform hover:-translate-x-2 transition-all`}
+              className={`mb-8 ${theme.text} hover:text-[#ec960b] font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-lg transform hover:-translate-x-2 transition-all`}
             >
               <ArrowRight className="rotate-180" />
               <span>Back to Categories</span>
@@ -1350,11 +1381,11 @@ export default function ModernTrainingCenter() {
                   <div
                     key={i}
                     onClick={() => setSelectedDomain(domain)}
-                    className={`${theme.card} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 ${theme.border} hover:border-purple-500 group`}
+                    className={`${theme.card} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 ${theme.border} hover:border-[#ec960b] group`}
                   >
                     <div className="flex items-start justify-between mb-4">
-                      <DomainIcon className="text-purple-500 group-hover:scale-110 transition-transform" size={48} />
-                      <span className={`px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-sm font-semibold`}>
+                      <DomainIcon className="text-[#ec960b] group-hover:scale-110 transition-transform" size={48} />
+                      <span className={`px-3 py-1 bg-[#c17b3f]/20 dark:bg-[#c17b3f]/30 text-[#ec960b] dark:text-[#ec960b] rounded-full text-sm font-semibold`}>
                         {domain.level}
                       </span>
                     </div>
@@ -1369,7 +1400,7 @@ export default function ModernTrainingCenter() {
                         <span>{domain.modules.length} modules</span>
                       </div>
                     </div>
-                    <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-purple-500 font-semibold group-hover:translate-x-2 transition-transform`}>
+                    <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-[#ec960b] font-semibold group-hover:translate-x-2 transition-transform`}>
                       <span>View Modules</span>
                       <ArrowRight size={20} />
                     </div>
@@ -1384,7 +1415,7 @@ export default function ModernTrainingCenter() {
           <>
             <button 
               onClick={() => setSelectedDomain(null)}
-              className={`mb-8 ${theme.text} hover:text-purple-500 font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-lg transform hover:-translate-x-2 transition-all`}
+              className={`mb-8 ${theme.text} hover:text-[#ec960b] font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-lg transform hover:-translate-x-2 transition-all`}
             >
               <ArrowRight className="rotate-180" />
               <span>Back to Domains</span>
@@ -1395,7 +1426,7 @@ export default function ModernTrainingCenter() {
                 <div>
                   <h2 className={`text-4xl font-bold mb-3 ${theme.text}`}>{selectedDomain.name}</h2>
                   <div className="flex flex-wrap gap-3 mb-4">
-                    <span className={`px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-sm font-semibold`}>
+                    <span className={`px-4 py-2 bg-[#c17b3f]/20 dark:bg-[#c17b3f]/30 text-[#ec960b] dark:text-[#ec960b] rounded-full text-sm font-semibold`}>
                       {selectedDomain.level}
                     </span>
                     <span className={`px-4 py-2 ${theme.card} ${theme.border} border rounded-full text-sm font-semibold ${theme.text}`}>
@@ -1405,7 +1436,7 @@ export default function ModernTrainingCenter() {
                 </div>
                 <button 
                   onClick={() => handleEnroll(courseCategories[selectedCategory].title, selectedDomain.name)}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
+                  className="bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
                 >
                   Enroll in Course
                 </button>
@@ -1414,9 +1445,9 @@ export default function ModernTrainingCenter() {
               <h3 className={`text-2xl font-bold mb-6 ${theme.text}`}>Course Modules</h3>
               <div className="space-y-4">
                 {selectedDomain.modules.map((module, i) => (
-                  <div key={i} className={`flex items-center justify-between p-6 ${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-gray-600 dark:hover:to-gray-700 transition-all group`}>
+                  <div key={i} className={`flex items-center justify-between p-6 ${isDark ? 'bg-gray-700' : 'bg-gray-50'} rounded-xl hover:bg-gradient-to-r hover:from-[#2970ae]/10 hover:to-[#ec960b]/10 dark:hover:from-gray-600 dark:hover:to-gray-700 transition-all group`}>
                     <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#2970ae] to-[#ec960b] rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
                         {i + 1}
                       </div>
                       <span className={`font-semibold ${theme.text} text-lg`}>{module}</span>
@@ -1494,7 +1525,7 @@ export default function ModernTrainingCenter() {
         <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border} mb-16`}>
           <div className="prose prose-lg max-w-none">
             <p className={`${theme.text} mb-6 leading-relaxed text-lg`}>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">{t.brand}</span> {t.aboutIntro}
+              <span className="text-2xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">{t.brand}</span> {t.aboutIntro}
             </p>
             <p className={`${theme.text} mb-6 leading-relaxed text-lg`}>
               {t.aboutPara1} <strong>{t.aboutPara1Bold1}</strong> {t.aboutPara1Text} <strong>{t.aboutPara1Bold2}</strong> {t.aboutPara1Text2}
@@ -1518,12 +1549,12 @@ export default function ModernTrainingCenter() {
               ].map((feature, i) => (
                 <div
                   key={i}
-                  className={`${isDark ? 'bg-gray-700' : 'bg-gradient-to-br from-blue-50 to-purple-50'} p-6 rounded-2xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 cursor-pointer`}
+                  className={`${isDark ? 'bg-gray-700' : 'bg-gradient-to-br from-[#2970ae]/10 to-[#ec960b]/10'} p-6 rounded-2xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 cursor-pointer`}
                   style={{
                     animation: `fadeInUp 0.6s ease-out ${i * 0.1}s both`
                   }}
                 >
-                  <feature.icon className="text-purple-500 mb-3 animate-float-gentle" size={32} />
+                  <feature.icon className="text-[#ec960b] mb-3 animate-float-gentle" size={32} />
                   <h4 className={`font-bold ${theme.text} mb-2`}>{feature.title}</h4>
                   <p className={`${theme.textSecondary} text-sm`}>{feature.desc}</p>
                 </div>
@@ -1580,14 +1611,14 @@ export default function ModernTrainingCenter() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className={`text-xl font-bold ${theme.text} mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 transition-all`}>
+                    <h3 className={`text-xl font-bold ${theme.text} mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#2970ae] group-hover:to-[#ec960b] transition-all`}>
                       {t[formation.titleKey]}
                     </h3>
                     <div className="flex items-center justify-between">
                       <span className={`text-sm ${theme.textSecondary}`}>
                         {formation.participants} {t.participants}
                       </span>
-                      <span className={`text-sm font-semibold px-3 py-1 rounded-full ${isDark ? 'bg-purple-900/30 text-purple-400' : 'bg-purple-100 text-purple-600'}`}>
+                      <span className={`text-sm font-semibold px-3 py-1 rounded-full ${isDark ? 'bg-[#c17b3f]/30 text-[#ec960b]' : 'bg-[#c17b3f]/20 text-[#ec960b]'}`}>
                         {formation.year}
                       </span>
                     </div>
@@ -1630,7 +1661,7 @@ export default function ModernTrainingCenter() {
                   animation: `slideInRotate 0.6s ease-out ${i * 0.15}s both`
                 }}
               >
-                <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#2970ae] to-[#ec960b] flex items-center justify-center group-hover:scale-110 transition-transform`}>
                   <item.icon className="text-white" size={24} />
                 </div>
                 <div>
@@ -1664,20 +1695,20 @@ export default function ModernTrainingCenter() {
                   <User size={20} />
                   <span>{t.name}</span>
                 </label>
-                <input type="text" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all ${theme.text}`} placeholder={t.yourName} />
+                <input type="text" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} placeholder={t.yourName} />
               </div>
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <Mail size={20} />
                   <span>{t.email}</span>
                 </label>
-                <input type="email" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all ${theme.text}`} placeholder={t.yourEmail} />
+                <input type="email" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} placeholder={t.yourEmail} />
               </div>
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3`}>{t.message}</label>
-                <textarea className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all ${theme.text}`} rows="6" placeholder={t.yourMessage}></textarea>
+                <textarea className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} rows="6" placeholder={t.yourMessage}></textarea>
               </div>
-              <button className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all">
+              <button className="w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all">
                 {t.sendMessage}
               </button>
             </div>
@@ -1690,7 +1721,7 @@ export default function ModernTrainingCenter() {
               <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.contactInfo}</h2>
               <div className="space-y-6">
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#2970ae] to-[#ec960b] rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-white" size={24} />
                   </div>
                   <div>
@@ -1702,7 +1733,7 @@ export default function ModernTrainingCenter() {
                 </div>
 
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#ec960b] to-[#c17b3f] rounded-xl flex items-center justify-center flex-shrink-0">
                     <Phone className="text-white" size={24} />
                   </div>
                   <div>
@@ -1715,7 +1746,7 @@ export default function ModernTrainingCenter() {
                 </div>
 
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#c17b3f] to-[#2970ae] rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="text-white" size={24} />
                   </div>
                   <div>
@@ -1740,29 +1771,29 @@ export default function ModernTrainingCenter() {
                   {
                     name: 'Facebook',
                     icon: '📘',
-                    color: 'from-blue-600 to-blue-700',
-                    hoverColor: 'hover:from-blue-700 hover:to-blue-800',
+                    color: 'from-[#2970ae] to-[#2970ae]/90',
+                    hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://facebook.com/deltaacademy'
                   },
                   {
                     name: 'Instagram',
                     icon: '📷',
-                    color: 'from-pink-600 via-purple-600 to-orange-600',
-                    hoverColor: 'hover:from-pink-700 hover:via-purple-700 hover:to-orange-700',
+                    color: 'from-[#ec960b] via-[#ec960b] to-[#c17b3f]',
+                    hoverColor: 'hover:from-[#c17b3f] hover:via-[#c17b3f] hover:to-[#ec960b]',
                     link: 'https://instagram.com/deltaacademy'
                   },
                   {
                     name: 'TikTok',
                     icon: '🎵',
                     color: 'from-gray-900 to-gray-950',
-                    hoverColor: 'hover:from-black hover:to-gray-900',
+                    hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://tiktok.com/@deltaacademy'
                   },
                   {
                     name: 'WhatsApp',
                     icon: '💬',
                     color: 'from-green-600 to-green-700',
-                    hoverColor: 'hover:from-green-700 hover:to-green-800',
+                    hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://wa.me/216XXXXXXXX'
                   }
                 ].map((social, i) => (
@@ -1828,7 +1859,7 @@ export default function ModernTrainingCenter() {
                 alt="Delta Academy Logo"
                 className="w-12 h-12 object-contain"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                 {t.brand}
               </span>
             </div>
@@ -1848,7 +1879,7 @@ export default function ModernTrainingCenter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300"
+                  className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#2970ae] hover:to-[#ec960b] rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300"
                 >
                   <span className="text-xl">{social.icon}</span>
                 </a>
@@ -1871,7 +1902,7 @@ export default function ModernTrainingCenter() {
                     onClick={() => navigateTo(link.page)}
                     className={`text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 group`}
                   >
-                    <ChevronRight size={16} className="group-hover:text-purple-400" />
+                    <ChevronRight size={16} className="group-hover:text-[#ec960b]" />
                     <span>{t[link.nameKey]}</span>
                   </button>
                 </li>
@@ -1896,7 +1927,7 @@ export default function ModernTrainingCenter() {
                     onClick={() => navigateTo('courses')}
                     className={`text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 group`}
                   >
-                    <Award size={14} className="group-hover:text-purple-400" />
+                    <Award size={14} className="group-hover:text-[#ec960b]" />
                     <span>{course}</span>
                   </button>
                 </li>
@@ -1909,25 +1940,25 @@ export default function ModernTrainingCenter() {
             <h3 className="text-lg font-bold mb-6 text-white">{t.getInTouch}</h3>
             <ul className="space-y-4">
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
-                <MapPin size={20} className="text-purple-400 flex-shrink-0 mt-1" />
+                <MapPin size={20} className="text-[#ec960b] flex-shrink-0 mt-1" />
                 <span className="text-gray-400 text-sm whitespace-pre-line">
                   {t.addressText}
                 </span>
               </li>
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
-                <Phone size={20} className="text-purple-400 flex-shrink-0 mt-1" />
+                <Phone size={20} className="text-[#ec960b] flex-shrink-0 mt-1" />
                 <span className="text-gray-400 text-sm">
                   +216 XX XXX XXX
                 </span>
               </li>
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
-                <Mail size={20} className="text-purple-400 flex-shrink-0 mt-1" />
+                <Mail size={20} className="text-[#ec960b] flex-shrink-0 mt-1" />
                 <span className="text-gray-400 text-sm">
                   info@deltaacademy.tn
                 </span>
               </li>
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
-                <Clock size={20} className="text-purple-400 flex-shrink-0 mt-1" />
+                <Clock size={20} className="text-[#ec960b] flex-shrink-0 mt-1" />
                 <span className="text-gray-400 text-sm whitespace-pre-line">
                   {t.officeHours}
                 </span>
@@ -2106,6 +2137,67 @@ export default function ModernTrainingCenter() {
           }
           75% {
             transform: rotate(-3deg);
+          }
+        }
+
+        /* Horizontal Scrolling Gallery Styles */
+        .gallery-scroll-container {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .gallery-track {
+          display: flex;
+          width: fit-content;
+          height: 100%;
+          animation: scrollGallery 150s linear infinite;
+          will-change: transform;
+        }
+
+        .gallery-image-wrapper {
+          flex-shrink: 0;
+          width: 50vw;
+          min-width: 600px;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .gallery-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: blur(3px) brightness(0.7);
+          transition: filter 0.3s ease;
+        }
+
+        /* Infinite scroll animation - right to left */
+        @keyframes scrollGallery {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .gallery-image-wrapper {
+            width: 60vw;
+            min-width: 450px;
+          }
+          
+          .gallery-image {
+            filter: blur(2px) brightness(0.6);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .gallery-image-wrapper {
+            width: 100vw;
+            min-width: 100vw;
           }
         }
 
