@@ -21,6 +21,12 @@ export default function ModernTrainingCenter() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
 
   // Translations Object
   const translations = {
@@ -666,7 +672,7 @@ export default function ModernTrainingCenter() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     // In production, send this to your backend
-    const mailtoLink = `mailto:admin@deltaacademy.com?subject=New Enrollment: ${formData.category}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACategory: ${formData.category}%0D%0ADomain: ${formData.domain}%0D%0AMessage: ${formData.message}`;
+    const mailtoLink = `mailto:azizdhifaoui06@gmail.com?subject=New Enrollment: ${formData.category}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACategory: ${formData.category}%0D%0ADomain: ${formData.domain}%0D%0AMessage: ${formData.message}`;
     
     console.log('Form Data:', formData);
     console.log('Mailto Link:', mailtoLink);
@@ -685,6 +691,33 @@ export default function ModernTrainingCenter() {
         message: ''
       });
     }, 2000);
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsContactSubmitting(true);
+    
+    // Simulate email sending
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // In production, send this to your backend
+    const mailtoLink = `mailto:info@deltaacademy.tn?subject=Contact Form: ${contactFormData.name}&body=Name: ${contactFormData.name}%0D%0AEmail: ${contactFormData.email}%0D%0AMessage: ${contactFormData.message}`;
+    
+    console.log('Contact Form Data:', contactFormData);
+    console.log('Mailto Link:', mailtoLink);
+    
+    setIsContactSubmitting(false);
+    
+    // Reset form
+    setContactFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
+    
+    // Show success message (you can add a toast notification here)
+    alert('Message sent successfully! We will contact you soon.');
   };
 
   const theme = {
@@ -872,11 +905,30 @@ export default function ModernTrainingCenter() {
   const EnrollmentModal = () => {
     if (!showEnrollModal) return null;
 
+    const handleBackdropClick = (e) => {
+      // Only close if clicking the backdrop itself, not the modal content
+      if (e.target === e.currentTarget) {
+        setShowEnrollModal(false);
+      }
+    };
+
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4" style={{ animation: 'fadeIn 0.3s ease-out' }}>
+      <div 
+        key="enrollment-modal"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4" 
+        style={{ animation: 'fadeIn 0.3s ease-out' }}
+        onClick={handleBackdropClick}
+      >
         <div 
           className={`${theme.card} rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-500`}
           style={{ animation: 'slideUp 0.5s ease-out' }}
+          onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => {
+            // Prevent ESC key from closing if user is typing
+            if (e.key === 'Escape' && document.activeElement.tagName === 'INPUT') {
+              e.stopPropagation();
+            }
+          }}
         >
           <div className="sticky top-0 bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] p-6 rounded-t-3xl z-10">
             <div className="flex justify-between items-center">
@@ -898,7 +950,12 @@ export default function ModernTrainingCenter() {
 
           <div className="p-8">
             {!submitSuccess ? (
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6" onKeyDown={(e) => {
+                // Prevent form submission on Enter key unless it's the submit button
+                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                  e.preventDefault();
+                }
+              }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
@@ -909,7 +966,15 @@ export default function ModernTrainingCenter() {
                       type="text"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, name: e.target.value });
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                        }
+                      }}
                       className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="John Doe"
                     />
@@ -924,7 +989,15 @@ export default function ModernTrainingCenter() {
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, email: e.target.value });
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                        }
+                      }}
                       className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="john@example.com"
                     />
@@ -940,7 +1013,15 @@ export default function ModernTrainingCenter() {
                     type="tel"
                     required
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      e.stopPropagation();
+                      setFormData({ ...formData, phone: e.target.value });
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                      }
+                    }}
                     className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder="+216 12 345 678"
                   />
@@ -955,7 +1036,10 @@ export default function ModernTrainingCenter() {
                     <select
                       required
                       value={formData.category}
-                      onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, category: e.target.value });
+                      }}
                       className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     >
                       <option value="">Select category</option>
@@ -972,7 +1056,15 @@ export default function ModernTrainingCenter() {
                     <input
                       type="text"
                       value={formData.domain}
-                      onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, domain: e.target.value });
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                        }
+                      }}
                       className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                       placeholder="e.g., Web Development"
                     />
@@ -983,7 +1075,10 @@ export default function ModernTrainingCenter() {
                   <label className={`${theme.text} font-semibold`}>Additional Message</label>
                   <textarea
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) => {
+                      e.stopPropagation();
+                      setFormData({ ...formData, message: e.target.value });
+                    }}
                     className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     rows="4"
                     placeholder="Tell us about your goals and expectations..."
@@ -1689,29 +1784,78 @@ export default function ModernTrainingCenter() {
           {/* Contact Form */}
           <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border}`}>
             <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.sendMessage}</h2>
-            <div className="space-y-6">
+            <form onSubmit={handleContactSubmit} className="space-y-6" onKeyDown={(e) => {
+              // Prevent form submission on Enter key unless it's the submit button
+              if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+              }
+            }}>
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <User size={20} />
                   <span>{t.name}</span>
                 </label>
-                <input type="text" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} placeholder={t.yourName} />
+                <input 
+                  type="text" 
+                  value={contactFormData.name}
+                  onChange={(e) => {
+                    e.stopPropagation();
+                    setContactFormData({ ...contactFormData, name: e.target.value });
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                    }
+                  }}
+                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  placeholder={t.yourName}
+                  required
+                />
               </div>
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <Mail size={20} />
                   <span>{t.email}</span>
                 </label>
-                <input type="email" className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} placeholder={t.yourEmail} />
+                <input 
+                  type="email" 
+                  value={contactFormData.email}
+                  onChange={(e) => {
+                    e.stopPropagation();
+                    setContactFormData({ ...contactFormData, email: e.target.value });
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                    }
+                  }}
+                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  placeholder={t.yourEmail}
+                  required
+                />
               </div>
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3`}>{t.message}</label>
-                <textarea className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} rows="6" placeholder={t.yourMessage}></textarea>
+                <textarea 
+                  value={contactFormData.message}
+                  onChange={(e) => {
+                    e.stopPropagation();
+                    setContactFormData({ ...contactFormData, message: e.target.value });
+                  }}
+                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  rows="6" 
+                  placeholder={t.yourMessage}
+                  required
+                ></textarea>
               </div>
-              <button className="w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all">
-                {t.sendMessage}
+              <button 
+                type="submit"
+                disabled={isContactSubmitting}
+                className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+              >
+                {isContactSubmitting ? 'Sending...' : t.sendMessage}
               </button>
-            </div>
+            </form>
           </div>
 
           {/* Contact Information & Social Media */}
