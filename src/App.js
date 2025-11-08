@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo, memo } from 'react';
 import { Menu, X, BookOpen, Award, Briefcase, ChevronRight, Users, Star, TrendingUp, Moon, Sun, Sparkles, Zap, Target, Clock, Mail, Phone, User, GraduationCap, Building2, CheckCircle2, ArrowRight, MapPin } from 'lucide-react';
 import logo from './logo_delta.png';
 import { SpeedInsights } from "@vercel/speed-insights/react"
@@ -665,7 +665,11 @@ export default function ModernTrainingCenter() {
   };
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!e || !e.preventDefault) return false;
     setIsSubmitting(true);
     
     // Simulate email sending
@@ -694,8 +698,11 @@ export default function ModernTrainingCenter() {
   };
 
   const handleContactSubmit = async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!e || !e.preventDefault) return false;
     setIsContactSubmitting(true);
     
     // Simulate email sending
@@ -741,9 +748,10 @@ export default function ModernTrainingCenter() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Navbar Component
-  const Navbar = () => {
-    const [showLangMenu, setShowLangMenu] = useState(false);
+  // Navbar Component - Memoized to prevent re-renders
+  const Navbar = useMemo(() => {
+    const NavbarComponent = () => {
+      const [showLangMenu, setShowLangMenu] = useState(false);
 
     const languages = [
       { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -774,6 +782,7 @@ export default function ModernTrainingCenter() {
                 { key: 'contact', label: t.contact }
               ].map((item) => (
                 <button
+                  type="button"
                   key={item.key}
                   onClick={() => navigateTo(item.key)}
                   className={`${theme.text} hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2970ae] hover:to-[#ec960b] transition-all font-medium relative group`}
@@ -783,6 +792,7 @@ export default function ModernTrainingCenter() {
                 </button>
               ))}
               <button
+                type="button"
                 onClick={() => handleEnroll()}
                 className="bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-6 py-2.5 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all font-semibold"
               >
@@ -792,6 +802,7 @@ export default function ModernTrainingCenter() {
               {/* Language Switcher */}
               <div className="relative">
                 <button
+                  type="button"
                   onClick={() => setShowLangMenu(!showLangMenu)}
                   className={`px-4 py-2.5 rounded-full ${theme.card} ${theme.border} border transition-all hover:scale-105 hover:shadow-lg flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 font-semibold group`}
                 >
@@ -808,6 +819,7 @@ export default function ModernTrainingCenter() {
                   >
                     {languages.map((lang) => (
                       <button
+                        type="button"
                         key={lang.code}
                         onClick={() => {
                           setLanguage(lang.code);
@@ -829,6 +841,7 @@ export default function ModernTrainingCenter() {
               </div>
 
               <button
+                type="button"
                 onClick={() => setIsDark(!isDark)}
                 className={`p-2.5 rounded-full ${theme.card} ${theme.border} border transition-all hover:scale-110`}
               >
@@ -837,6 +850,7 @@ export default function ModernTrainingCenter() {
             </div>
 
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
@@ -855,6 +869,7 @@ export default function ModernTrainingCenter() {
                 { key: 'contact', label: t.contact }
               ].map((item) => (
                 <button
+                  type="button"
                   key={item.key}
                   onClick={() => navigateTo(item.key)}
                   className={`block w-full text-left px-4 py-2 ${theme.text} hover:bg-gradient-to-r hover:from-[#2970ae] hover:to-[#ec960b] hover:text-white rounded-lg transition-all`}
@@ -863,6 +878,7 @@ export default function ModernTrainingCenter() {
                 </button>
               ))}
               <button
+                type="button"
                 onClick={() => handleEnroll()}
                 className="w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-6 py-2.5 rounded-full font-semibold"
               >
@@ -874,6 +890,7 @@ export default function ModernTrainingCenter() {
                 <div className={`text-sm font-semibold ${theme.text} px-4 py-2`}>{t.home === 'Home' ? 'Language' : t.home === 'Accueil' ? 'Langue' : 'اللغة'}</div>
                 {languages.map((lang) => (
                   <button
+                    type="button"
                     key={lang.code}
                     onClick={() => {
                       setLanguage(lang.code);
@@ -888,6 +905,7 @@ export default function ModernTrainingCenter() {
               </div>
 
               <button
+                type="button"
                 onClick={() => setIsDark(!isDark)}
                 className={`w-full flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 px-4 py-2 ${theme.card} ${theme.border} border rounded-lg`}
               >
@@ -901,222 +919,13 @@ export default function ModernTrainingCenter() {
     );
   };
 
-  // Enrollment Modal
-  const EnrollmentModal = () => {
-    if (!showEnrollModal) return null;
-
-    const handleBackdropClick = (e) => {
-      // Only close if clicking the backdrop itself, not the modal content
-      if (e.target === e.currentTarget) {
-        setShowEnrollModal(false);
-      }
-    };
-
-    return (
-      <div 
-        key="enrollment-modal"
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4" 
-        style={{ animation: 'fadeIn 0.3s ease-out' }}
-        onClick={handleBackdropClick}
-      >
-        <div 
-          className={`${theme.card} rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-500`}
-          style={{ animation: 'slideUp 0.5s ease-out' }}
-          onClick={(e) => e.stopPropagation()}
-          onKeyDown={(e) => {
-            // Prevent ESC key from closing if user is typing
-            if (e.key === 'Escape' && document.activeElement.tagName === 'INPUT') {
-              e.stopPropagation();
-            }
-          }}
-        >
-          <div className="sticky top-0 bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] p-6 rounded-t-3xl z-10">
-            <div className="flex justify-between items-center">
-              <div>
-                <h2 className={`text-3xl font-bold text-white flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                  <Sparkles />
-                  <span>Enroll Now</span>
-                </h2>
-                <p className="text-white/90 mt-1">Start your learning journey today</p>
-              </div>
-              <button
-                onClick={() => setShowEnrollModal(false)}
-                className="text-white hover:bg-white/20 p-2 rounded-full transition-all"
-              >
-                <X size={24} />
-              </button>
-            </div>
-          </div>
-
-          <div className="p-8">
-            {!submitSuccess ? (
-              <form onSubmit={handleFormSubmit} className="space-y-6" onKeyDown={(e) => {
-                // Prevent form submission on Enter key unless it's the submit button
-                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
-                  e.preventDefault();
-                }
-              }}>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                      <User size={18} />
-                      <span>Full Name *</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => {
-                        e.stopPropagation();
-                        setFormData({ ...formData, name: e.target.value });
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                        }
-                      }}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                      <Mail size={18} />
-                      <span>Email *</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => {
-                        e.stopPropagation();
-                        setFormData({ ...formData, email: e.target.value });
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                        }
-                      }}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                    <Phone size={18} />
-                    <span>Phone Number *</span>
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => {
-                      e.stopPropagation();
-                      setFormData({ ...formData, phone: e.target.value });
-                    }}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        e.preventDefault();
-                      }
-                    }}
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                    placeholder="+216 12 345 678"
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                      <GraduationCap size={18} />
-                      <span>Course Category *</span>
-                    </label>
-                    <select
-                      required
-                      value={formData.category}
-                      onChange={(e) => {
-                        e.stopPropagation();
-                        setFormData({ ...formData, category: e.target.value });
-                      }}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                    >
-                      <option value="">Select category</option>
-                      <option value="Certified Courses">Certified Courses</option>
-                      <option value="Corporate Training">Corporate Training</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                      <BookOpen size={18} />
-                      <span>Domain</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.domain}
-                      onChange={(e) => {
-                        e.stopPropagation();
-                        setFormData({ ...formData, domain: e.target.value });
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          e.preventDefault();
-                        }
-                      }}
-                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                      placeholder="e.g., Web Development"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold`}>Additional Message</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => {
-                      e.stopPropagation();
-                      setFormData({ ...formData, message: e.target.value });
-                    }}
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
-                    rows="4"
-                    placeholder="Tell us about your goals and expectations..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Submitting...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Submit Enrollment</span>
-                      <ArrowRight />
-                    </>
-                  )}
-                </button>
-              </form>
-            ) : (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6" style={{ animation: 'bounce 1s infinite' }}>
-                  <CheckCircle2 size={40} className="text-green-500" />
-                </div>
-                <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>Enrollment Submitted!</h3>
-                <p className={theme.textSecondary}>We'll contact you shortly via email</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  };
+  // Enrollment Modal - Memoized handlers to prevent recreation
+  const handleBackdropClick = useCallback((e) => {
+    // Only close if clicking the backdrop itself, not the modal content
+    if (e.target === e.currentTarget) {
+      setShowEnrollModal(false);
+    }
+  }, []);
 
   // Landing Page
   const LandingPage = () => (
@@ -1190,6 +999,7 @@ export default function ModernTrainingCenter() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
+                type="button"
                 onClick={() => handleEnroll()}
                 className={`bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
               >
@@ -1197,6 +1007,7 @@ export default function ModernTrainingCenter() {
                 <ArrowRight />
               </button>
               <button
+                type="button"
                 onClick={() => navigateTo('courses')}
                 className={`${theme.card} ${theme.text} px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transform hover:scale-105 transition-all border-2 ${theme.border}`}
               >
@@ -1346,6 +1157,7 @@ export default function ModernTrainingCenter() {
 
           <div className="text-center">
             <button
+              type="button"
               onClick={() => navigateTo('about')}
               className={`bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto animate-pulse-slow`}
             >
@@ -1385,7 +1197,11 @@ export default function ModernTrainingCenter() {
                     <span>{domain.duration}</span>
                   </div>
                   <div className={`text-xs ${theme.textSecondary} mb-4`}>{domain.modules.length} {t.modules}</div>
-                  <button className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
+                  <button 
+                    type="button"
+                    onClick={() => handleEnroll(courseCategories.certified.title, domain.name)}
+                    className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
+                  >
                     {t.enrollNow}
                   </button>
                 </div>
@@ -1406,6 +1222,7 @@ export default function ModernTrainingCenter() {
             {t.joinThousands}
           </p>
           <button
+            type="button"
             onClick={() => handleEnroll()}
             className={`bg-white text-[#ec960b] px-12 py-4 rounded-full text-lg font-bold hover:shadow-2xl transform hover:scale-110 transition-all flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 mx-auto`}
           >
@@ -1509,6 +1326,7 @@ export default function ModernTrainingCenter() {
         {selectedDomain && (
           <>
             <button 
+              type="button"
               onClick={() => setSelectedDomain(null)}
               className={`mb-8 ${theme.text} hover:text-[#ec960b] font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-lg transform hover:-translate-x-2 transition-all`}
             >
@@ -1530,6 +1348,7 @@ export default function ModernTrainingCenter() {
                   </div>
                 </div>
                 <button 
+                  type="button"
                   onClick={() => handleEnroll(courseCategories[selectedCategory].title, selectedDomain.name)}
                   className="bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
                 >
@@ -1784,12 +1603,24 @@ export default function ModernTrainingCenter() {
           {/* Contact Form */}
           <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border}`}>
             <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.sendMessage}</h2>
-            <form onSubmit={handleContactSubmit} className="space-y-6" onKeyDown={(e) => {
-              // Prevent form submission on Enter key unless it's the submit button
-              if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
-                e.preventDefault();
-              }
-            }}>
+            <form 
+              onSubmit={handleContactSubmit} 
+              className="space-y-6" 
+              onKeyDown={(e) => {
+                // Prevent form submission on Enter key unless it's the submit button
+                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }
+              }}
+              onKeyPress={(e) => {
+                // Additional safeguard
+                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }
+              }}
+            >
               <div>
                 <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <User size={20} />
@@ -2120,13 +1951,13 @@ export default function ModernTrainingCenter() {
             © {new Date().getFullYear()} {t.allRightsReserved}
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <button className="text-gray-400 hover:text-white transition-colors">
+            <button type="button" className="text-gray-400 hover:text-white transition-colors">
               {t.privacyPolicy}
             </button>
-            <button className="text-gray-400 hover:text-white transition-colors">
+            <button type="button" className="text-gray-400 hover:text-white transition-colors">
               {t.termsOfService}
             </button>
-            <button className="text-gray-400 hover:text-white transition-colors">
+            <button type="button" className="text-gray-400 hover:text-white transition-colors">
               {t.cookiePolicy}
             </button>
           </div>
@@ -2147,7 +1978,222 @@ export default function ModernTrainingCenter() {
   return (
     <div className={`min-h-screen ${theme.bg} transition-colors duration-500`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Navbar />
-      <EnrollmentModal />
+      {showEnrollModal && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4" 
+          style={{ animation: 'fadeIn 0.3s ease-out' }}
+          onClick={handleBackdropClick}
+        >
+          <div 
+            className={`${theme.card} rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-500`}
+            style={{ animation: 'slideUp 0.5s ease-out' }}
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              // Prevent ESC key from closing if user is typing
+              if (e.key === 'Escape' && document.activeElement.tagName === 'INPUT') {
+                e.stopPropagation();
+              }
+            }}
+          >
+            <div className="sticky top-0 bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] p-6 rounded-t-3xl z-10">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h2 className={`text-3xl font-bold text-white flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                    <Sparkles />
+                    <span>Enroll Now</span>
+                  </h2>
+                  <p className="text-white/90 mt-1">Start your learning journey today</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowEnrollModal(false)}
+                  className="text-white hover:bg-white/20 p-2 rounded-full transition-all"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+
+            <div className="p-8">
+              {!submitSuccess ? (
+                <form 
+                  onSubmit={handleFormSubmit} 
+                  className="space-y-6" 
+                  onKeyDown={(e) => {
+                    // Prevent form submission on Enter key unless it's the submit button
+                    if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }
+                  }}
+                  onKeyPress={(e) => {
+                    // Additional safeguard
+                    if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }
+                  }}
+                >
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                        <User size={18} />
+                        <span>Full Name *</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          setFormData({ ...formData, name: e.target.value });
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                        <Mail size={18} />
+                        <span>Email *</span>
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          setFormData({ ...formData, email: e.target.value });
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                      <Phone size={18} />
+                      <span>Phone Number *</span>
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, phone: e.target.value });
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                        }
+                      }}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                      placeholder="+216 12 345 678"
+                    />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                        <GraduationCap size={18} />
+                        <span>Course Category *</span>
+                      </label>
+                      <select
+                        required
+                        value={formData.category}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          setFormData({ ...formData, category: e.target.value });
+                        }}
+                        className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                      >
+                        <option value="">Select category</option>
+                        <option value="Certified Courses">Certified Courses</option>
+                        <option value="Corporate Training">Corporate Training</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                        <BookOpen size={18} />
+                        <span>Domain</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.domain}
+                        onChange={(e) => {
+                          e.stopPropagation();
+                          setFormData({ ...formData, domain: e.target.value });
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                        placeholder="e.g., Web Development"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className={`${theme.text} font-semibold`}>Additional Message</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        setFormData({ ...formData, message: e.target.value });
+                      }}
+                      className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                      rows="4"
+                      placeholder="Tell us about your goals and expectations..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Enrollment</span>
+                        <ArrowRight />
+                      </>
+                    )}
+                  </button>
+                </form>
+              ) : (
+                <div className="text-center py-12">
+                  <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6" style={{ animation: 'bounce 1s infinite' }}>
+                    <CheckCircle2 size={40} className="text-green-500" />
+                  </div>
+                  <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>Enrollment Submitted!</h3>
+                  <p className={theme.textSecondary}>We'll contact you shortly via email</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {currentPage === 'home' && <LandingPage />}
       {currentPage === 'courses' && <CoursesPage />}
       {currentPage === 'about' && <AboutPage />}
