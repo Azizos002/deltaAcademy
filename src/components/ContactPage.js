@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { User, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function ContactPage({
   theme,
