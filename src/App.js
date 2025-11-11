@@ -38,7 +38,7 @@ export default function ModernTrainingCenter() {
 
   // Get translations for current language
   const t = translations[language];
-
+  
   // Use theme hook
   const theme = useTheme(isDark);
 
@@ -129,7 +129,7 @@ export default function ModernTrainingCenter() {
     }
   }, []);
 
-              return (
+  return (
     <div className={`min-h-screen ${theme.bg} transition-colors duration-500`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Navbar
         theme={theme}
