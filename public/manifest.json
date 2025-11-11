@@ -4,9 +4,9 @@
   "description": "Professional training & certification programs designed for students and working professionals",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "logo_delta.png",
+      "sizes": "any",
+      "type": "image/png"
     },
     {
       "src": "logo192.png",
