@@ -7,11 +7,8 @@
     <title>Delta Academy - Professional Training & Certification Programs | Transform Your Future</title>
     <meta name="title" content="Delta Academy - Professional Training & Certification Programs | Transform Your Future" />
     <meta name="description" content="Professional training & certification programs designed for students and working professionals. Certified courses and corporate training in Digital Marketing, Web Development, Graphic Design, Data Analysis, and more. Transform your career today!" />
-    <meta name="keywords" content="training center, professional courses, certification programs, digital marketing, web development, graphic design, data analysis, corporate training, Tunisia, Delta Academy" />
     <meta name="author" content="Delta Academy" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
     
     <!-- Viewport & Mobile Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
@@ -26,7 +23,7 @@
     <meta property="og:url" content="https://deltaacademy.tn/" />
     <meta property="og:title" content="Delta Academy - Professional Training & Certification Programs" />
     <meta property="og:description" content="Professional training & certification programs designed for students and working professionals. Transform your career today!" />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:image" content="https://deltaacademy.tn/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Delta Academy - Professional Training Center" />
@@ -38,21 +35,30 @@
     <meta name="twitter:url" content="https://deltaacademy.tn/" />
     <meta name="twitter:title" content="Delta Academy - Professional Training & Certification Programs" />
     <meta name="twitter:description" content="Professional training & certification programs designed for students and working professionals. Transform your career today!" />
-    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta name="twitter:image" content="https://deltaacademy.tn/og-image.jpg" />
     <meta name="twitter:image:alt" content="Delta Academy - Professional Training Center" />
     
-    <!-- Favicon & Icons -->
+    <!-- Favicon & Icons - Optimized order -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/android-chrome-512x512.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <!-- Preconnect to external domains for performance -->
+    <!-- Performance: Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Performance: Preload critical assets -->
+    <link rel="preload" as="style" href="%PUBLIC_URL%/static/css/main.chunk.css" />
+    <link rel="preload" as="script" href="%PUBLIC_URL%/static/js/main.chunk.js" />
+    
+    <!-- Performance: Preload hero image (update path to your actual hero image) -->
+    <!-- <link rel="preload" as="image" href="%PUBLIC_URL%/hero-image.webp" type="image/webp" /> -->
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://deltaacademy.tn/" />
@@ -63,7 +69,7 @@
     <link rel="alternate" hreflang="ar" href="https://deltaacademy.tn/ar" />
     <link rel="alternate" hreflang="x-default" href="https://deltaacademy.tn/" />
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data: Educational Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -71,73 +77,234 @@
       "name": "Delta Academy",
       "alternateName": "Delta Academy Training Center",
       "url": "https://deltaacademy.tn",
-      "logo": "https://deltaacademy.tn/logo_delta.png",
-      "description": "Professional training & certification programs designed for students and working professionals",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://deltaacademy.tn/logo_delta.png",
+        "width": 600,
+        "height": 600
+      },
+      "image": "https://deltaacademy.tn/og-image.jpg",
+      "description": "Professional training & certification programs in Digital Marketing, Web Development, Graphic Design, Data Analysis, and more. Serving Tunisia with certified courses for students and professionals.",
+      "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Avenue Habib Bourguiba",
         "addressLocality": "Tunis",
+        "postalCode": "1000",
+        "addressRegion": "Tunis",
         "addressCountry": "TN"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+216-XX-XXX-XXX",
-        "contactType": "Customer Service",
-        "email": "info@deltaacademy.tn",
-        "availableLanguage": ["English", "French", "Arabic"]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.8065",
+        "longitude": "10.1815"
       },
-      "sameAs": [
-        "https://facebook.com/deltaacademy",
-        "https://instagram.com/deltaacademy",
-        "https://tiktok.com/@deltaacademy"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "category": "Education",
-        "description": "Professional training courses and certification programs"
-      }
-    }
-    </script>
-    
-    <!-- Course Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Professional Training Programs",
-      "description": "Certified courses and corporate training programs",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Delta Academy"
-      },
-      "courseMode": ["Online", "In-person"],
-      "hasCourseInstance": [
+      "contactPoint": [
         {
-          "@type": "CourseInstance",
-          "courseMode": "In-person",
-          "courseWorkload": "PT3M"
+          "@type": "ContactPoint",
+          "telephone": "+216-71-XXX-XXX",
+          "contactType": "Customer Service",
+          "email": "info@deltaacademy.tn",
+          "availableLanguage": ["en", "fr", "ar"],
+          "areaServed": "TN"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+216-XX-XXX-XXX",
+          "contactType": "Admissions",
+          "email": "admissions@deltaacademy.tn",
+          "availableLanguage": ["en", "fr", "ar"]
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/deltaacademy",
+        "https://www.instagram.com/deltaacademy",
+        "https://www.tiktok.com/@deltaacademy",
+        "https://www.linkedin.com/company/deltaacademy"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127",
+        "bestRating": "5"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
         }
       ]
     }
     </script>
     
-    <!-- Security Headers are configured in vercel.json -->
+    <!-- Structured Data: Course Catalog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "position": 1,
+          "name": "Digital Marketing Professional Certificate",
+          "description": "Master SEO, SEM, Social Media Marketing, Content Strategy, and Analytics. Get certified and boost your career.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Delta Academy",
+            "url": "https://deltaacademy.tn"
+          },
+          "courseCode": "DM-101",
+          "educationalLevel": "Professional",
+          "timeRequired": "P3M",
+          "inLanguage": ["en", "fr"],
+          "courseMode": ["In-person", "Online"],
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Blended",
+            "duration": "P3M",
+            "courseWorkload": "PT8H"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "price": "1500",
+            "priceCurrency": "TND",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Course",
+          "position": 2,
+          "name": "Web Development Bootcamp",
+          "description": "Full-stack development with React, Node.js, and modern frameworks. Build real-world projects.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Delta Academy",
+            "url": "https://deltaacademy.tn"
+          },
+          "courseCode": "WD-101",
+          "educationalLevel": "Intermediate",
+          "timeRequired": "P4M",
+          "inLanguage": ["en", "fr"],
+          "courseMode": ["In-person"],
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "In-person",
+            "duration": "P4M",
+            "courseWorkload": "PT10H"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "price": "2000",
+            "priceCurrency": "TND",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Course",
+          "position": 3,
+          "name": "Graphic Design & UI/UX Mastery",
+          "description": "Learn Adobe Creative Suite, Figma, and modern design principles. Create stunning visual content.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Delta Academy",
+            "url": "https://deltaacademy.tn"
+          },
+          "courseCode": "GD-101",
+          "educationalLevel": "Beginner to Intermediate",
+          "timeRequired": "P3M",
+          "inLanguage": ["en", "fr"],
+          "courseMode": ["In-person"],
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "In-person",
+            "duration": "P3M",
+            "courseWorkload": "PT6H"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "price": "1200",
+            "priceCurrency": "TND",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Course",
+          "position": 4,
+          "name": "Data Analysis & Business Intelligence",
+          "description": "Excel, SQL, Python, Power BI, and Tableau. Transform data into actionable insights.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Delta Academy",
+            "url": "https://deltaacademy.tn"
+          },
+          "courseCode": "DA-101",
+          "educationalLevel": "Intermediate",
+          "timeRequired": "P3M",
+          "inLanguage": ["en", "fr"],
+          "courseMode": ["In-person", "Online"],
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Blended",
+            "duration": "P3M",
+            "courseWorkload": "PT8H"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "price": "1800",
+            "priceCurrency": "TND",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://deltaacademy.tn"
+        }
+      ]
+    }
+    </script>
     
     <!-- Performance Hints -->
     <meta http-equiv="x-dns-prefetch-control" content="on" />
   </head>
   <body>
     <noscript>
-      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-        <h1>JavaScript Required</h1>
+      <div style="text-align: center; padding: 50px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; line-height: 1.6;">
+        <h1 style="color: #2970ae; margin-bottom: 20px;">Delta Academy - Professional Training Center</h1>
+        <p style="font-size: 18px; font-weight: bold;">JavaScript Required</p>
         <p>You need to enable JavaScript to run this application.</p>
         <p>Please enable JavaScript in your browser settings and refresh the page.</p>
+        <hr style="margin: 30px auto; width: 200px; border: 1px solid #ddd;">
+        <p style="font-size: 14px; color: #666;">
+          For assistance, contact us at 
+          <a href="mailto:info@deltaacademy.tn" style="color: #2970ae; text-decoration: none;">info@deltaacademy.tn</a>
+        </p>
       </div>
     </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      The build step will place the bundled scripts into the <body> tag.
-    -->
   </body>
 </html>

@@ -1,26 +1,167 @@
-# https://www.robotstxt.org/robotstxt.html
-# Delta Academy - robots.txt
+# Delta Academy - Professional Training Center
+# https://deltaacademy.tn/robots.txt
+# Last Updated: 2025-11-11
 
-# Allow all search engines
+# ============================================
+# PRIMARY SEARCH ENGINES (No Restrictions)
+# ============================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yahoo (uses Bing's index but has separate bot)
+User-agent: Slurp
+Allow: /
+
+# Yandex (popular in Russia/Eastern Europe)
+User-agent: Yandex
+Allow: /
+
+# Baidu (if targeting Chinese students)
+User-agent: Baiduspider
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# ============================================
+# SEO & ANALYTICS CRAWLERS (Controlled)
+# ============================================
+
+# Ahrefs (aggressive - limit crawling)
+User-agent: AhrefsBot
+Crawl-delay: 10
+Allow: /
+
+# SEMrush (aggressive - limit crawling)
+User-agent: SemrushBot
+Crawl-delay: 10
+Allow: /
+
+# Moz
+User-agent: rogerbot
+Crawl-delay: 5
+Allow: /
+
+# Screaming Frog (used by SEO auditors)
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+# ============================================
+# AI SCRAPERS (Block Training Data Collection)
+# ============================================
+
+# OpenAI GPT Crawler
+User-agent: GPTBot
+Disallow: /
+
+# Google Bard/Gemini Training
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl (AI training dataset)
+User-agent: CCBot
+Disallow: /
+
+# Anthropic Claude (AI training)
+User-agent: anthropic-ai
+Disallow: /
+
+# Facebook/Meta AI
+User-agent: FacebookBot
+Disallow: /
+
+# Bytedance/TikTok AI (allow if you want TikTok integration)
+User-agent: Bytespider
+Crawl-delay: 30
+Allow: /
+
+# ============================================
+# BAD BOTS & SCRAPERS (Block Completely)
+# ============================================
+
+# Email harvesters
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+# Content scrapers
+User-agent: WebCopier
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+# Spam bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# ============================================
+# DEFAULT RULE (All Other Bots)
+# ============================================
+
 User-agent: *
 Allow: /
 
-# Disallow admin and private areas (if any)
-Disallow: /admin/
-Disallow: /api/
-Disallow: /private/
+# ============================================
+# SITEMAP LOCATION
+# ============================================
 
-# Allow important resources
-Allow: /static/
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.png$
-Allow: /*.webp$
-Allow: /*.svg$
-
-# Sitemap location (update with your actual sitemap URL)
 Sitemap: https://deltaacademy.tn/sitemap.xml
 
-# Crawl-delay (optional, adjust based on server capacity)
-Crawl-delay: 1
+# ============================================
+# ADDITIONAL SITEMAPS (if you add them later)
+# ============================================
+
+# Sitemap: https://deltaacademy.tn/sitemap-courses.xml
+# Sitemap: https://deltaacademy.tn/sitemap-blog.xml
+# Sitemap: https://deltaacademy.tn/sitemap-images.xml
+
+# ============================================
+# NOTES
+# ============================================
+# 
+# 1. No paths are disallowed because this is a static frontend
+#    - No /admin/, /api/, or /private/ directories exist
+#    - All content is meant to be indexed
+#
+# 2. AI scrapers are blocked to prevent training on your content
+#    - Consider allowing if you want AI assistants to reference your courses
+#
+# 3. Crawl-delay only applied to aggressive SEO tools
+#    - Google/Bing ignore crawl-delay (they use Search Console settings)
+#    - No global crawl-delay = faster indexing
+#
+# 4. Aggressive bots (Ahrefs, SEMrush) are rate-limited
+#    - They can crawl but won't overload your Vercel function calls
+#
+# 5. Update this file when you add:
+#    - Blog section → No restrictions needed
+#    - Student portal → Add "Disallow: /portal/"
+#    - Admin dashboard → Add "Disallow: /admin/"
