@@ -35,6 +35,7 @@ export default function ModernTrainingCenter() {
     message: ''
   });
   const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+  const [contactSubmitSuccess, setContactSubmitSuccess] = useState(false);
 
   // Get translations for current language
   const t = translations[language];
@@ -43,9 +44,15 @@ export default function ModernTrainingCenter() {
   const theme = useTheme(isDark);
 
   const handleEnroll = (category = '', domain = '') => {
-    setFormData({ ...formData, category, domain });
+    setFormData((prev) => ({ ...prev, category, domain }));
     setShowEnrollModal(true);
     setSubmitSuccess(false);
+  };
+
+  const buildMailtoLink = (to, subject, body) => {
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+    return `mailto:${to}?subject=${encodedSubject}&body=${encodedBody}`;
   };
 
   const handleFormSubmit = async (e) => {
@@ -60,7 +67,11 @@ export default function ModernTrainingCenter() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     // In production, send this to your backend
-    const mailtoLink = `mailto:azizdhifaoui06@gmail.com?subject=New Enrollment: ${formData.category}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACategory: ${formData.category}%0D%0ADomain: ${formData.domain}%0D%0AMessage: ${formData.message}`;
+    const mailtoLink = buildMailtoLink(
+      'azizdhifaoui06@gmail.com',
+      `New Enrollment: ${formData.category}`,
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCategory: ${formData.category}\nDomain: ${formData.domain}\nMessage: ${formData.message}`
+    );
     
     console.log('Form Data:', formData);
     console.log('Mailto Link:', mailtoLink);
@@ -88,12 +99,17 @@ export default function ModernTrainingCenter() {
     }
     if (!e || !e.preventDefault) return false;
     setIsContactSubmitting(true);
+    setContactSubmitSuccess(false);
     
     // Simulate email sending
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     // In production, send this to your backend
-    const mailtoLink = `mailto:info@deltaacademy.tn?subject=Contact Form: ${contactFormData.name}&body=Name: ${contactFormData.name}%0D%0AEmail: ${contactFormData.email}%0D%0AMessage: ${contactFormData.message}`;
+    const mailtoLink = buildMailtoLink(
+      'info@deltaacademy.tn',
+      `Contact Form: ${contactFormData.name}`,
+      `Name: ${contactFormData.name}\nEmail: ${contactFormData.email}\nMessage: ${contactFormData.message}`
+    );
     
     console.log('Contact Form Data:', contactFormData);
     console.log('Mailto Link:', mailtoLink);
@@ -107,8 +123,8 @@ export default function ModernTrainingCenter() {
       message: ''
     });
     
-    // Show success message (you can add a toast notification here)
-    alert('Message sent successfully! We will contact you soon.');
+    setContactSubmitSuccess(true);
+    setTimeout(() => setContactSubmitSuccess(false), 5000);
   };
 
   const navigateTo = (page) => {
@@ -201,6 +217,7 @@ export default function ModernTrainingCenter() {
           contactFormData={contactFormData}
           setContactFormData={setContactFormData}
           isContactSubmitting={isContactSubmitting}
+          contactSubmitSuccess={contactSubmitSuccess}
           handleContactSubmit={handleContactSubmit}
         />
       )}

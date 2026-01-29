@@ -34,7 +34,16 @@ export default function LandingPage({
             <div className="gallery-track">
               {[...galleryImages, ...galleryImages].map((imageUrl, i) => (
                 <div key={`img-${i}`} className="gallery-image-wrapper">
-                  <img src={imageUrl} alt={`Gallery ${i + 1}`} className="gallery-image" />
+                  <img
+                    src={imageUrl}
+                    alt=""
+                    aria-hidden="true"
+                    className="gallery-image"
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    width="800"
+                    height="600"
+                  />
                 </div>
               ))}
             </div>
@@ -178,8 +187,12 @@ export default function LandingPage({
                 <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-[#ec960b]/50 transition-shadow duration-500">
                   <img
                     src={formation.image}
-                    alt={formation.titleKey}
+                    alt={t[formation.titleKey]}
                     className="w-full h-full object-cover transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-700"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 flex flex-col justify-end p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -290,4 +303,3 @@ export default function LandingPage({
     </div>
   );
 }
-

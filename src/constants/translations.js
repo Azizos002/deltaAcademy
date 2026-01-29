@@ -124,6 +124,7 @@ export const translations = {
     followUsDesc: "Stay connected with us on social media for updates, tips, and success stories",
     visitLocation: "Visit Our Location",
     visitLocationDesc: "Find us in the heart of Tunis. We're easily accessible by public transport.",
+    contactSuccessMessage: "Message sent successfully! We will contact you soon.",
 
     // Footer
     footerDesc: "Empowering individuals and professionals through cutting-edge education and practical skills development.",
@@ -307,6 +308,7 @@ export const translations = {
     followUsDesc: "Restez connecté avec nous sur les réseaux sociaux pour des mises à jour, des conseils et des histoires de réussite",
     visitLocation: "Visitez Notre Emplacement",
     visitLocationDesc: "Trouvez-nous au cœur de Tunis. Nous sommes facilement accessibles par les transports en commun.",
+    contactSuccessMessage: "Message envoyé avec succès ! Nous vous contacterons bientôt.",
 
     // Footer
     footerDesc: "Autonomiser les individus et les professionnels grâce à une éducation de pointe et au développement de compétences pratiques.",
@@ -490,6 +492,7 @@ export const translations = {
     followUsDesc: "ابق على اتصال معنا على وسائل التواصل الاجتماعي للحصول على التحديثات والنصائح وقصص النجاح",
     visitLocation: "زر موقعنا",
     visitLocationDesc: "اعثر علينا في قلب تونس. يسهل الوصول إلينا بواسطة وسائل النقل العامة.",
+    contactSuccessMessage: "تم إرسال الرسالة بنجاح! سنتواصل معك قريبًا.",
 
     // Footer
     footerDesc: "تمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية.",
@@ -549,4 +552,3 @@ export const translations = {
     formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين"
   }
 };
-

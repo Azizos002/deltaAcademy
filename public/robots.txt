@@ -1,6 +1,6 @@
 # Delta Academy - Professional Training Center
 # https://deltaacademy.tn/robots.txt
-# Last Updated: 2025-11-11
+# Last Updated: 2025-02-14
 
 # ============================================
 # PRIMARY SEARCH ENGINES (No Restrictions)
@@ -113,13 +113,6 @@ User-agent: MJ12bot
 Disallow: /
 
 User-agent: dotbot
-Disallow: /
-
-# Spam bots
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: AhrefsBot
 Disallow: /
 
 # ============================================

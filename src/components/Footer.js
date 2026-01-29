@@ -21,6 +21,8 @@ export default function Footer({
                 src={logo}
                 alt="Delta Academy Logo"
                 className="w-12 h-12 object-contain"
+                width="48"
+                height="48"
               />
               <span className="text-xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                 {t.brand}
@@ -164,4 +166,3 @@ export default function Footer({
     </footer>
   );
 }
-

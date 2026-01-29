@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Mail, MapPin, Phone } from 'lucide-react';
+import { User, Mail, MapPin, Phone, Facebook, Instagram, Music2, MessageCircle } from 'lucide-react';
 
 export default function ContactPage({
   theme,
@@ -8,23 +8,24 @@ export default function ContactPage({
   contactFormData,
   setContactFormData,
   isContactSubmitting,
+  contactSubmitSuccess,
   handleContactSubmit
 }) {
   return (
-    <div className={`pt-24 pb-16 min-h-screen ${theme.bg} transition-colors duration-500`}>
+    <div className={`pt-20 md:pt-24 pb-12 md:pb-16 min-h-screen ${theme.bg} transition-colors duration-500`}>
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className={`text-5xl md:text-6xl font-bold mb-4 ${theme.text} text-center`}>{t.getInTouch}</h1>
-        <p className={`text-xl ${theme.textSecondary} text-center mb-16`}>
+        <h1 className={`text-3xl sm:text-4xl md:text-6xl font-bold mb-3 md:mb-4 ${theme.text} text-center`}>{t.getInTouch}</h1>
+        <p className={`text-base sm:text-lg md:text-xl ${theme.textSecondary} text-center mb-10 md:mb-16`}>
           {t.getInTouchSubtitle}
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Contact Form */}
-          <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border}`}>
-            <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.sendMessage}</h2>
+          <div className={`${theme.card} rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border ${theme.border}`}>
+            <h2 className={`text-2xl md:text-3xl font-bold ${theme.text} mb-6`}>{t.sendMessage}</h2>
             <form 
               onSubmit={handleContactSubmit} 
-              className="space-y-6" 
+              className="space-y-5 md:space-y-6" 
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
                   e.preventDefault();
@@ -33,11 +34,12 @@ export default function ContactPage({
               }}
             >
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                  <User size={20} />
+                <label htmlFor="contact-name" className={`block ${theme.text} font-semibold mb-2 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <User size={18} />
                   <span>{t.name}</span>
                 </label>
                 <input 
+                  id="contact-name"
                   type="text" 
                   value={contactFormData.name}
                   onChange={(e) => {
@@ -49,17 +51,19 @@ export default function ContactPage({
                       e.preventDefault();
                     }
                   }}
-                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  autoComplete="name"
+                  className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
                   placeholder={t.yourName}
                   required
                 />
               </div>
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
-                  <Mail size={20} />
+                <label htmlFor="contact-email" className={`block ${theme.text} font-semibold mb-2 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <Mail size={18} />
                   <span>{t.email}</span>
                 </label>
                 <input 
+                  id="contact-email"
                   type="email" 
                   value={contactFormData.email}
                   onChange={(e) => {
@@ -71,29 +75,41 @@ export default function ContactPage({
                       e.preventDefault();
                     }
                   }}
-                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  autoComplete="email"
+                  className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
                   placeholder={t.yourEmail}
                   required
                 />
               </div>
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3`}>{t.message}</label>
+                <label htmlFor="contact-message" className={`block ${theme.text} font-semibold mb-2`}>{t.message}</label>
                 <textarea 
+                  id="contact-message"
                   value={contactFormData.message}
                   onChange={(e) => {
                     e.stopPropagation();
                     setContactFormData({ ...contactFormData, message: e.target.value });
                   }}
-                  className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
-                  rows="6" 
+                  autoComplete="off"
+                  className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
+                  rows="5" 
                   placeholder={t.yourMessage}
                   required
                 ></textarea>
               </div>
+              {contactSubmitSuccess && (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-semibold text-green-700"
+                >
+                  {t.contactSuccessMessage}
+                </div>
+              )}
               <button 
                 type="submit"
                 disabled={isContactSubmitting}
-                className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
+                className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {isContactSubmitting ? 'Sending...' : t.sendMessage}
               </button>
@@ -103,12 +119,12 @@ export default function ContactPage({
           {/* Contact Information & Social Media */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border}`}>
-              <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.contactInfo}</h2>
-              <div className="space-y-6">
+            <div className={`${theme.card} rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border ${theme.border}`}>
+              <h2 className={`text-2xl md:text-3xl font-bold ${theme.text} mb-6`}>{t.contactInfo}</h2>
+              <div className="space-y-5">
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#2970ae] to-[#ec960b] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#2970ae] to-[#ec960b] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <MapPin className="text-white" size={22} />
                   </div>
                   <div>
                     <h4 className={`font-bold ${theme.text} mb-1`}>{t.address}</h4>
@@ -119,8 +135,8 @@ export default function ContactPage({
                 </div>
 
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#ec960b] to-[#c17b3f] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#ec960b] to-[#c17b3f] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <Phone className="text-white" size={22} />
                   </div>
                   <div>
                     <h4 className={`font-bold ${theme.text} mb-1`}>{t.phone}</h4>
@@ -132,8 +148,8 @@ export default function ContactPage({
                 </div>
 
                 <div className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4`}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#c17b3f] to-[#2970ae] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white" size={24} />
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#c17b3f] to-[#2970ae] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
+                    <Mail className="text-white" size={22} />
                   </div>
                   <div>
                     <h4 className={`font-bold ${theme.text} mb-1`}>{t.email}</h4>
@@ -147,37 +163,37 @@ export default function ContactPage({
             </div>
 
             {/* Social Media Links */}
-            <div className={`${theme.card} rounded-3xl p-10 shadow-xl border ${theme.border}`}>
-              <h2 className={`text-3xl font-bold ${theme.text} mb-6`}>{t.followUs}</h2>
-              <p className={`${theme.textSecondary} mb-6`}>
+            <div className={`${theme.card} rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border ${theme.border}`}>
+              <h2 className={`text-2xl md:text-3xl font-bold ${theme.text} mb-4`}>{t.followUs}</h2>
+              <p className={`${theme.textSecondary} mb-6 text-sm md:text-base`}>
                 {t.followUsDesc}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   {
                     name: 'Facebook',
-                    icon: '📘',
-                    color: 'from-[#2970ae] to-[#2970ae]/90',
+                    icon: Facebook,
+                    color: 'from-[#1d4ed8] to-[#2563eb]',
                     hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://facebook.com/deltaacademy'
                   },
                   {
                     name: 'Instagram',
-                    icon: '📷',
+                    icon: Instagram,
                     color: 'from-[#ec960b] via-[#ec960b] to-[#c17b3f]',
                     hoverColor: 'hover:from-[#c17b3f] hover:via-[#c17b3f] hover:to-[#ec960b]',
                     link: 'https://instagram.com/deltaacademy'
                   },
                   {
                     name: 'TikTok',
-                    icon: '🎵',
+                    icon: Music2,
                     color: 'from-gray-900 to-gray-950',
                     hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://tiktok.com/@deltaacademy'
                   },
                   {
                     name: 'WhatsApp',
-                    icon: '💬',
+                    icon: MessageCircle,
                     color: 'from-green-600 to-green-700',
                     hoverColor: 'hover:from-[#c17b3f] hover:to-[#c17b3f]/90',
                     link: 'https://wa.me/216XXXXXXXX'
@@ -188,15 +204,15 @@ export default function ContactPage({
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`bg-gradient-to-r ${social.color} ${social.hoverColor} text-white p-6 rounded-2xl text-center transform hover:scale-110 hover:-rotate-3 transition-all duration-300 shadow-lg hover:shadow-2xl group`}
+                    className={`bg-gradient-to-r ${social.color} ${social.hoverColor} text-white p-4 sm:p-5 rounded-2xl text-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl group`}
                     style={{
                       animation: `scaleInBounce 0.5s ease-out ${i * 0.1}s both`
                     }}
                   >
-                    <div className="text-4xl mb-2 transform group-hover:scale-125 group-hover:rotate-12 transition-transform">
-                      {social.icon}
+                    <div className="flex items-center justify-center mb-2">
+                      <social.icon size={28} className="text-white" />
                     </div>
-                    <div className="font-bold text-lg">{social.name}</div>
+                    <div className="font-bold text-sm sm:text-base">{social.name}</div>
                   </a>
                 ))}
               </div>
@@ -206,13 +222,13 @@ export default function ContactPage({
 
         {/* Map Section */}
         <div className={`${theme.card} rounded-3xl overflow-hidden shadow-2xl border ${theme.border}`}>
-          <div className="p-8">
-            <h2 className={`text-3xl font-bold ${theme.text} mb-4`}>{t.visitLocation}</h2>
-            <p className={`${theme.textSecondary} mb-6`}>
+          <div className="p-6 sm:p-8">
+            <h2 className={`text-2xl md:text-3xl font-bold ${theme.text} mb-3`}>{t.visitLocation}</h2>
+            <p className={`${theme.textSecondary} mb-4 text-sm md:text-base`}>
               {t.visitLocationDesc}
             </p>
           </div>
-          <div className="w-full h-96 relative">
+          <div className="w-full h-72 sm:h-80 md:h-96 relative">
             <iframe
               title="Delta Academy Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102499.12944864944!2d10.165919!3d36.806389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis%2C%20Tunisia!5e0!3m2!1sen!2s!4v1234567890"
@@ -230,4 +246,3 @@ export default function ContactPage({
     </div>
   );
 }
-
