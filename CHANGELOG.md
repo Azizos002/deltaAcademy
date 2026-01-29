@@ -22,6 +22,7 @@
 - Refreshed sitemap timestamps for current content freshness signals. (public/sitemap.xml)
 - Removed conflicting bot directives and updated robots.txt metadata for clearer crawler guidance. (public/robots.txt)
 - Added preconnect hint for Unsplash imagery to reduce connection setup time for hero visuals. (public/index.html)
+- Expanded CSP allowances for Vercel Speed Insights and Google Maps embeds to prevent production blocking. (vercel.json)
 
 ### Accessibility improvements
 - Associated form labels with inputs and added autocomplete hints for better screen reader and autofill behavior. (src/components/ContactPage.js, src/components/EnrollmentModal.js)
