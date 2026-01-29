@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronRight, Moon, Sun, CheckCircle2 } from 'lucide-react';
+import { Menu, X, ChevronRight, Moon, Sun, CheckCircle2, Globe } from 'lucide-react';
 import logo from '../logo_delta.png';
 
 const languages = [
@@ -78,11 +78,12 @@ export default function Navbar({
               <button
                 type="button"
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                className={`px-4 py-2.5 rounded-full ${theme.card} ${theme.border} border transition-all hover:scale-105 hover:shadow-lg flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 font-semibold group`}
+                className={`px-3 py-2 md:px-4 md:py-2.5 rounded-full ${theme.card} ${theme.border} border-2 transition-all hover:scale-105 hover:shadow-lg flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 font-semibold group hover:border-[#ec960b]`}
                 aria-haspopup="menu"
                 aria-expanded={showLangMenu}
               >
-                <span className="text-2xl">{languages.find(l => l.code === language)?.flag}</span>
+                <Globe size={18} className="text-[#ec960b]" />
+                <span className="text-xl">{languages.find(l => l.code === language)?.flag}</span>
                 <span className={`text-sm ${theme.text} group-hover:text-[#ec960b] transition-colors`}>
                   {language.toUpperCase()}
                 </span>
@@ -167,7 +168,10 @@ export default function Navbar({
 
             {/* Mobile Language Switcher */}
             <div className="space-y-2">
-              <div className={`text-sm font-semibold ${theme.text} px-4 py-2`}>{t.home === 'Home' ? 'Language' : t.home === 'Accueil' ? 'Langue' : 'اللغة'}</div>
+              <div className={`text-sm font-semibold ${theme.text} px-4 py-2 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                <Globe size={16} className="text-[#ec960b]" />
+                <span>{t.home === 'Home' ? 'Language' : t.home === 'Accueil' ? 'Langue' : 'اللغة'}</span>
+              </div>
               {languages.map((lang) => (
                 <button
                   type="button"

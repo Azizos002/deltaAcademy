@@ -14,6 +14,11 @@
 ### Style / UI fixes
 - Added width/height and lazy/async decoding on imagery to reduce layout shift and improve perceived performance. (src/components/LandingPage.js, src/components/AboutPage.js, src/components/Footer.js, src/components/Navbar.js)
 - Marked gallery imagery as decorative to prevent screen reader noise in the hero background. (src/components/LandingPage.js)
+<<<<<<< HEAD
+=======
+- Refined mobile spacing, typography, and card padding on the contact page for better phone usability. (src/components/ContactPage.js)
+- Enhanced the language switcher styling with iconography and improved mobile presentation. (src/components/Navbar.js)
+>>>>>>> remotes/origin/codex/audit-and-fix-codebase-issues-egkveh
 
 ### Refactors / code quality
 - Added a small mailto builder to centralize encoding for consistent email link generation. (src/App.js)
@@ -28,6 +33,10 @@
 - Associated form labels with inputs and added autocomplete hints for better screen reader and autofill behavior. (src/components/ContactPage.js, src/components/EnrollmentModal.js)
 - Added dialog roles/labels and live regions for modal and contact success states. (src/components/EnrollmentModal.js, src/components/ContactPage.js)
 - Added aria labeling and expanded state to navigation and menu controls. (src/components/Navbar.js)
+<<<<<<< HEAD
+=======
+- Improved form sizing and spacing on small screens for touch accessibility. (src/components/EnrollmentModal.js, src/components/ContactPage.js)
+>>>>>>> remotes/origin/codex/audit-and-fix-codebase-issues-egkveh
 
 ### Docs / developer experience
 - Documented changes and verification steps in this changelog. (CHANGELOG.md)

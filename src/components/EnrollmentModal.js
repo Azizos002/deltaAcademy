@@ -56,11 +56,11 @@ export default function EnrollmentModal({
           </div>
         </div>
 
-        <div className="p-8">
+        <div className="p-6 sm:p-8">
           {!submitSuccess ? (
             <form 
               onSubmit={handleFormSubmit} 
-              className="space-y-6" 
+              className="space-y-5 sm:space-y-6" 
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
                   e.preventDefault();
@@ -68,7 +68,7 @@ export default function EnrollmentModal({
                 }
               }}
             >
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="enroll-name" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <User size={18} />
@@ -89,7 +89,7 @@ export default function EnrollmentModal({
                       }
                     }}
                     autoComplete="name"
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.fullName}
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function EnrollmentModal({
                       }
                     }}
                     autoComplete="email"
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.yourEmail}
                   />
                 </div>
@@ -140,12 +140,12 @@ export default function EnrollmentModal({
                     }
                   }}
                   autoComplete="tel"
-                  className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                   placeholder="+216 12 345 678"
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="enroll-category" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <GraduationCap size={18} />
@@ -159,7 +159,7 @@ export default function EnrollmentModal({
                       e.stopPropagation();
                       setFormData({ ...formData, category: e.target.value });
                     }}
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                   >
                     <option value="">{t.selectCategory}</option>
                     <option value="Certified Courses">{t.certifiedCourses}</option>
@@ -186,7 +186,7 @@ export default function EnrollmentModal({
                       }
                     }}
                     autoComplete="off"
-                    className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                    className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.domain}
                   />
                 </div>
@@ -202,7 +202,7 @@ export default function EnrollmentModal({
                     setFormData({ ...formData, message: e.target.value });
                   }}
                   autoComplete="off"
-                  className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
+                  className={`w-full px-4 py-3 md:py-3.5 text-base ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                   rows="4"
                   placeholder={t.additionalMessagePlaceholder}
                 ></textarea>
@@ -211,7 +211,7 @@ export default function EnrollmentModal({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
+                className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}
               >
                 {isSubmitting ? (
                   <>
