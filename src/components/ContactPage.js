@@ -8,6 +8,7 @@ export default function ContactPage({
   contactFormData,
   setContactFormData,
   isContactSubmitting,
+  contactSubmitSuccess,
   handleContactSubmit
 }) {
   return (
@@ -33,11 +34,12 @@ export default function ContactPage({
               }}
             >
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                <label htmlFor="contact-name" className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <User size={20} />
                   <span>{t.name}</span>
                 </label>
                 <input 
+                  id="contact-name"
                   type="text" 
                   value={contactFormData.name}
                   onChange={(e) => {
@@ -49,17 +51,19 @@ export default function ContactPage({
                       e.preventDefault();
                     }
                   }}
+                  autoComplete="name"
                   className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
                   placeholder={t.yourName}
                   required
                 />
               </div>
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                <label htmlFor="contact-email" className={`block ${theme.text} font-semibold mb-3 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <Mail size={20} />
                   <span>{t.email}</span>
                 </label>
                 <input 
+                  id="contact-email"
                   type="email" 
                   value={contactFormData.email}
                   onChange={(e) => {
@@ -71,25 +75,37 @@ export default function ContactPage({
                       e.preventDefault();
                     }
                   }}
+                  autoComplete="email"
                   className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
                   placeholder={t.yourEmail}
                   required
                 />
               </div>
               <div>
-                <label className={`block ${theme.text} font-semibold mb-3`}>{t.message}</label>
+                <label htmlFor="contact-message" className={`block ${theme.text} font-semibold mb-3`}>{t.message}</label>
                 <textarea 
+                  id="contact-message"
                   value={contactFormData.message}
                   onChange={(e) => {
                     e.stopPropagation();
                     setContactFormData({ ...contactFormData, message: e.target.value });
                   }}
+                  autoComplete="off"
                   className={`w-full px-4 py-3 ${theme.card} border-2 ${theme.border} rounded-xl focus:ring-2 focus:ring-[#ec960b] outline-none transition-all ${theme.text}`} 
                   rows="6" 
                   placeholder={t.yourMessage}
                   required
                 ></textarea>
               </div>
+              {contactSubmitSuccess && (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-semibold text-green-700"
+                >
+                  {t.contactSuccessMessage}
+                </div>
+              )}
               <button 
                 type="submit"
                 disabled={isContactSubmitting}
@@ -230,4 +246,3 @@ export default function ContactPage({
     </div>
   );
 }
-

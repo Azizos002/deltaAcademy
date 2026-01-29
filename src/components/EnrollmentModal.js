@@ -17,8 +17,8 @@ export default function EnrollmentModal({
   if (!showEnrollModal) return null;
 
   return (
-    <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4" 
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
       style={{ animation: 'fadeIn 0.3s ease-out' }}
       onClick={handleBackdropClick}
     >
@@ -31,20 +31,25 @@ export default function EnrollmentModal({
             e.stopPropagation();
           }
         }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="enrollment-title"
+        aria-describedby="enrollment-subtitle"
       >
         <div className="sticky top-0 bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] p-6 rounded-t-3xl z-10">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className={`text-3xl font-bold text-white flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+              <h2 id="enrollment-title" className={`text-3xl font-bold text-white flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                 <Sparkles />
                 <span>{t.enrollmentTitle}</span>
               </h2>
-              <p className="text-white/90 mt-1">{t.enrollmentSubtitle}</p>
+              <p id="enrollment-subtitle" className="text-white/90 mt-1">{t.enrollmentSubtitle}</p>
             </div>
             <button
               type="button"
               onClick={() => setShowEnrollModal(false)}
               className="text-white hover:bg-white/20 p-2 rounded-full transition-all"
+              aria-label="Close enrollment form"
             >
               <X size={24} />
             </button>
@@ -62,20 +67,15 @@ export default function EnrollmentModal({
                   e.stopPropagation();
                 }
               }}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }
-              }}
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <label htmlFor="enroll-name" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <User size={18} />
                     <span>{t.fullName} *</span>
                   </label>
                   <input
+                    id="enroll-name"
                     type="text"
                     required
                     value={formData.name}
@@ -88,17 +88,19 @@ export default function EnrollmentModal({
                         e.preventDefault();
                       }
                     }}
+                    autoComplete="name"
                     className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.fullName}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <label htmlFor="enroll-email" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <Mail size={18} />
                     <span>{t.email} *</span>
                   </label>
                   <input
+                    id="enroll-email"
                     type="email"
                     required
                     value={formData.email}
@@ -111,6 +113,7 @@ export default function EnrollmentModal({
                         e.preventDefault();
                       }
                     }}
+                    autoComplete="email"
                     className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.yourEmail}
                   />
@@ -118,11 +121,12 @@ export default function EnrollmentModal({
               </div>
 
               <div className="space-y-2">
-                <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                <label htmlFor="enroll-phone" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                   <Phone size={18} />
                   <span>{t.phoneNumber} *</span>
                 </label>
                 <input
+                  id="enroll-phone"
                   type="tel"
                   required
                   value={formData.phone}
@@ -135,6 +139,7 @@ export default function EnrollmentModal({
                       e.preventDefault();
                     }
                   }}
+                  autoComplete="tel"
                   className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                   placeholder="+216 12 345 678"
                 />
@@ -142,11 +147,12 @@ export default function EnrollmentModal({
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <label htmlFor="enroll-category" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <GraduationCap size={18} />
                     <span>{t.courseCategory} *</span>
                   </label>
                   <select
+                    id="enroll-category"
                     required
                     value={formData.category}
                     onChange={(e) => {
@@ -162,11 +168,12 @@ export default function EnrollmentModal({
                 </div>
 
                 <div className="space-y-2">
-                  <label className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
+                  <label htmlFor="enroll-domain" className={`${theme.text} font-semibold flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                     <BookOpen size={18} />
                     <span>{t.domain}</span>
                   </label>
                   <input
+                    id="enroll-domain"
                     type="text"
                     value={formData.domain}
                     onChange={(e) => {
@@ -178,6 +185,7 @@ export default function EnrollmentModal({
                         e.preventDefault();
                       }
                     }}
+                    autoComplete="off"
                     className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                     placeholder={t.domain}
                   />
@@ -185,13 +193,15 @@ export default function EnrollmentModal({
               </div>
 
               <div className="space-y-2">
-                <label className={`${theme.text} font-semibold`}>{t.additionalMessage}</label>
+                <label htmlFor="enroll-message" className={`${theme.text} font-semibold`}>{t.additionalMessage}</label>
                 <textarea
+                  id="enroll-message"
                   value={formData.message}
                   onChange={(e) => {
                     e.stopPropagation();
                     setFormData({ ...formData, message: e.target.value });
                   }}
+                  autoComplete="off"
                   className={`w-full px-4 py-3 ${theme.card} ${theme.border} border-2 rounded-xl focus:ring-2 focus:ring-[#ec960b] focus:border-transparent outline-none transition-all ${theme.text}`}
                   rows="4"
                   placeholder={t.additionalMessagePlaceholder}
@@ -217,7 +227,7 @@ export default function EnrollmentModal({
               </button>
             </form>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-12" role="status" aria-live="polite">
               <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6" style={{ animation: 'bounce 1s infinite' }}>
                 <CheckCircle2 size={40} className="text-green-500" />
               </div>
@@ -230,4 +240,3 @@ export default function EnrollmentModal({
     </div>
   );
 }
-
