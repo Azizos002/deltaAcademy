@@ -118,8 +118,8 @@ export default function LandingPage({
                   <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <Icon className="text-white" size={32} />
                   </div>
-                  <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>{key === 'certified' ? t.certifiedCourses : t.corporateTraining}</h3>
-                  <p className={`${theme.textSecondary} mb-4`}>{key === 'certified' ? t.certifiedCoursesSubtitle : t.corporateTrainingSubtitle}</p>
+                  <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>{t[category.titleKey]}</h3>
+                  <p className={`${theme.textSecondary} mb-4`}>{t[category.subtitleKey]}</p>
                   <p className={`${theme.textSecondary} text-sm mb-6`}>
                     {category.domains.length} {t.specializedDomains}
                   </p>
@@ -257,17 +257,17 @@ export default function LandingPage({
                   }}
                 >
                   <DomainIcon className="text-[#ec960b] mb-4 group-hover:scale-110 transition-transform" size={40} />
-                  <h4 className={`text-xl font-bold ${theme.text} mb-2`}>{domain.name}</h4>
+                  <h4 className={`text-xl font-bold ${theme.text} mb-2`}>{t[domain.nameKey] || domain.nameKey}</h4>
                   <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-sm ${theme.textSecondary} mb-3`}>
                     <Clock size={16} />
-                    <span>{domain.duration}</span>
+                    <span>{t[domain.durationKey] || domain.durationKey}</span>
                   </div>
                   <div className={`text-xs ${theme.textSecondary} mb-4`}>{domain.modules.length} {t.modules}</div>
                   <button 
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleEnroll(courseCategories.certified.title, domain.name);
+                      handleEnroll(t[courseCategories.certified.titleKey], t[domain.nameKey] || domain.nameKey);
                     }}
                     className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
                   >

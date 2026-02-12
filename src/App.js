@@ -18,7 +18,7 @@ export default function ModernTrainingCenter() {
   const [selectedDomain, setSelectedDomain] = useState(null);
   const [isDark, setIsDark] = useState(false);
   const [showEnrollModal, setShowEnrollModal] = useState(false);
-  const [language, setLanguage] = useState('en'); // en, fr, ar
+  const [language, setLanguage] = useState(() => localStorage.getItem('delta-language') || 'fr'); // fr, en, ar
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,7 +38,12 @@ export default function ModernTrainingCenter() {
   const [contactSubmitSuccess, setContactSubmitSuccess] = useState(false);
 
   // Get translations for current language
-  const t = translations[language];
+  const t = translations[language] || translations.fr;
+
+  React.useEffect(() => {
+    localStorage.setItem('delta-language', language);
+    document.documentElement.lang = language;
+  }, [language]);
   
   // Use theme hook
   const theme = useTheme(isDark);

@@ -131,7 +131,7 @@ export default function Navbar({
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMenuOpen ? t.closeMenu : t.openMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -170,7 +170,7 @@ export default function Navbar({
             <div className="space-y-2">
               <div className={`text-sm font-semibold ${theme.text} px-4 py-2 flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2`}>
                 <Globe size={16} className="text-[#ec960b]" />
-                <span>{t.home === 'Home' ? 'Language' : t.home === 'Accueil' ? 'Langue' : 'اللغة'}</span>
+                <span>{t.languageLabel}</span>
               </div>
               {languages.map((lang) => (
                 <button

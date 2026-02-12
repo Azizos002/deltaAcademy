@@ -111,7 +111,7 @@ export default function ContactPage({
                 disabled={isContactSubmitting}
                 className={`w-full bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] text-white py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
               >
-                {isContactSubmitting ? 'Sending...' : t.sendMessage}
+                {isContactSubmitting ? t.sending : t.sendMessage}
               </button>
             </form>
           </div>

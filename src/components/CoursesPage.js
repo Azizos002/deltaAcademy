@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Clock, BookOpen, ChevronRight } from 'lucide-react';
-import { courseCategories } from '../constants/data';
+import { courseCategories, languageTargetProfiles } from '../constants/data';
 
 export default function CoursesPage({
   theme,
@@ -33,8 +33,8 @@ export default function CoursesPage({
                     <div className={`w-20 h-20 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
                       <Icon className="text-white" size={40} />
                     </div>
-                    <h3 className={`text-3xl font-bold mb-3 ${theme.text}`}>{category.title}</h3>
-                    <p className={`${theme.textSecondary} mb-6 text-lg`}>{category.subtitle}</p>
+                    <h3 className={`text-3xl font-bold mb-3 ${theme.text}`}>{t[category.titleKey]}</h3>
+                    <p className={`${theme.textSecondary} mb-6 text-lg`}>{t[category.subtitleKey]}</p>
                     <div className={`text-sm ${theme.textSecondary} mb-6`}>
                       {category.domains.length} specialized domains • {t.expertInstructorsText}
                     </div>
@@ -61,8 +61,8 @@ export default function CoursesPage({
             </button>
             
             <div className="mb-12">
-              <h2 className={`text-4xl font-bold mb-3 ${theme.text}`}>{courseCategories[selectedCategory].title}</h2>
-              <p className={`${theme.textSecondary} text-xl`}>{courseCategories[selectedCategory].subtitle}</p>
+              <h2 className={`text-4xl font-bold mb-3 ${theme.text}`}>{t[courseCategories[selectedCategory].titleKey]}</h2>
+              <p className={`${theme.textSecondary} text-xl`}>{t[courseCategories[selectedCategory].subtitleKey]}</p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -77,14 +77,14 @@ export default function CoursesPage({
                     <div className="flex items-start justify-between mb-4">
                       <DomainIcon className="text-[#ec960b] group-hover:scale-110 transition-transform" size={48} />
                       <span className={`px-3 py-1 bg-[#c17b3f]/20 dark:bg-[#c17b3f]/30 text-[#ec960b] dark:text-[#ec960b] rounded-full text-sm font-semibold`}>
-                        {domain.level}
+                        {t[domain.levelKey] || domain.levelKey}
                       </span>
                     </div>
-                    <h4 className={`text-2xl font-bold mb-3 ${theme.text}`}>{domain.name}</h4>
+                    <h4 className={`text-2xl font-bold mb-3 ${theme.text}`}>{t[domain.nameKey] || domain.nameKey}</h4>
                     <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-4 text-sm ${theme.textSecondary} mb-4`}>
                       <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-1`}>
                         <Clock size={16} />
-                        <span>{domain.duration}</span>
+                        <span>{t[domain.durationKey] || domain.durationKey}</span>
                       </div>
                       <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-1`}>
                         <BookOpen size={16} />
@@ -116,19 +116,19 @@ export default function CoursesPage({
             <div className={`${theme.card} rounded-3xl p-10 shadow-2xl border ${theme.border}`}>
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8">
                 <div>
-                  <h2 className={`text-4xl font-bold mb-3 ${theme.text}`}>{selectedDomain.name}</h2>
+                  <h2 className={`text-4xl font-bold mb-3 ${theme.text}`}>{t[selectedDomain.nameKey] || selectedDomain.nameKey}</h2>
                   <div className="flex flex-wrap gap-3 mb-4">
                     <span className={`px-4 py-2 bg-[#c17b3f]/20 dark:bg-[#c17b3f]/30 text-[#ec960b] dark:text-[#ec960b] rounded-full text-sm font-semibold`}>
-                      {selectedDomain.level}
+                      {t[selectedDomain.levelKey] || selectedDomain.levelKey}
                     </span>
                     <span className={`px-4 py-2 ${theme.card} ${theme.border} border rounded-full text-sm font-semibold ${theme.text}`}>
-                      {selectedDomain.duration}
+                      {t[selectedDomain.durationKey] || selectedDomain.durationKey}
                     </span>
                   </div>
                 </div>
                 <button 
                   type="button"
-                  onClick={() => handleEnroll(courseCategories[selectedCategory].title, selectedDomain.name)}
+                  onClick={() => handleEnroll(t[courseCategories[selectedCategory].titleKey], t[selectedDomain.nameKey] || selectedDomain.nameKey)}
                   className="bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
                 >
                   {t.enrollInCourse}
@@ -149,6 +149,27 @@ export default function CoursesPage({
                   </div>
                 ))}
               </div>
+
+              {selectedDomain.nameKey === 'languageTraining' && (
+                <div className="mt-8 grid md:grid-cols-2 gap-6">
+                  <div className={`p-6 rounded-2xl ${isDark ? 'bg-gray-700' : 'bg-gray-50'} border ${theme.border}`}>
+                    <h4 className={`text-xl font-bold mb-3 ${theme.text}`}>{t.languageOptionsTitle}</h4>
+                    <p className={theme.textSecondary}>{t.languageList}</p>
+                  </div>
+                  <div className={`p-6 rounded-2xl ${isDark ? 'bg-gray-700' : 'bg-gray-50'} border ${theme.border}`}>
+                    <h4 className={`text-xl font-bold mb-3 ${theme.text}`}>{t.targetProfilesTitle}</h4>
+                    <ul className={`space-y-2 ${theme.textSecondary}`}>
+                      {languageTargetProfiles.map((profile) => (
+                        <li key={profile.key} className="flex items-center gap-2">
+                          <profile.icon size={16} className="text-[#ec960b]" />
+                          <span>{t[profile.key]}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
             </div>
           </>
         )}
