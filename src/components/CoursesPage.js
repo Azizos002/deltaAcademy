@@ -128,7 +128,7 @@ export default function CoursesPage({
                 </div>
                 <button 
                   type="button"
-                  onClick={() => handleEnroll(t[courseCategories[selectedCategory].titleKey], t[selectedDomain.nameKey] || selectedDomain.nameKey)}
+                  onClick={() => handleEnroll('', selectedDomain.nameKey || '')}
                   className="bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
                 >
                   {t.enrollInCourse}

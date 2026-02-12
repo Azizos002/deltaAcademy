@@ -62,3 +62,23 @@ Recommended redeploy flow:
 2. Merge into your production branch (usually `main`).
 3. Trigger redeploy in Vercel dashboard.
 4. Validate homepage, language switcher, courses, and contact form on mobile.
+
+## Form-to-email pipeline (Vercel API)
+
+Forms now submit to `POST /api/contact` (serverless function).
+
+Required Vercel environment variables:
+
+- `RESEND_API_KEY`
+- `FROM_EMAIL` (example: `onboarding@resend.dev`)
+- `TO_EMAIL` (set to `deltacademy2026@gmail.com`)
+
+Security features implemented:
+- Basic server-side validation/sanitization
+- Honeypot field anti-spam check
+- In-memory rate limiting per IP
+
+Manual test:
+1. Start locally with `npm start`
+2. Fill Contact or Enrollment form
+3. Ensure API returns success and email arrives in `TO_EMAIL`

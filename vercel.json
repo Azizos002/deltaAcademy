@@ -5,14 +5,16 @@
   "devCommand": "npm start",
   "installCommand": "npm install",
   "framework": "create-react-app",
-  
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
-  
   "headers": [
     {
       "source": "/",
@@ -254,18 +256,15 @@
       ]
     }
   ],
-  
   "env": {
     "REACT_APP_ENV": "production",
     "GENERATE_SOURCEMAP": "false"
   },
-  
   "build": {
     "env": {
       "GENERATE_SOURCEMAP": "false"
     }
   },
-  
   "cleanUrls": true,
   "trailingSlash": false
 }

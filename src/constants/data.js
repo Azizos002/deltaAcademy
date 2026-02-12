@@ -153,32 +153,32 @@ export const languageTargetProfiles = [
 export const previousFormations = [
   {
     id: 1,
-    titleKey: 'formation1Title',
-    descKey: 'formation1Desc',
+    titleKey: 'formation7Title',
+    descKey: 'formation7Desc',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     participants: 45,
     year: 2024
   },
   {
     id: 2,
-    titleKey: 'formation2Title',
-    descKey: 'formation2Desc',
+    titleKey: 'formation8Title',
+    descKey: 'formation8Desc',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
     participants: 38,
     year: 2024
   },
   {
     id: 3,
-    titleKey: 'formation3Title',
-    descKey: 'formation3Desc',
+    titleKey: 'formation9Title',
+    descKey: 'formation9Desc',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
     participants: 32,
     year: 2023
   },
   {
     id: 4,
-    titleKey: 'formation4Title',
-    descKey: 'formation4Desc',
+    titleKey: 'formation10Title',
+    descKey: 'formation10Desc',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     participants: 28,
     year: 2023

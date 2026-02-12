@@ -25,6 +25,7 @@ export default function ModernTrainingCenter() {
     phone: '',
     category: '',
     domain: '',
+    honeypot: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,6 +33,9 @@ export default function ModernTrainingCenter() {
   const [contactFormData, setContactFormData] = useState({
     name: '',
     email: '',
+    category: '',
+    domain: '',
+    honeypot: '',
     message: ''
   });
   const [isContactSubmitting, setIsContactSubmitting] = useState(false);
@@ -54,10 +58,18 @@ export default function ModernTrainingCenter() {
     setSubmitSuccess(false);
   };
 
-  const buildMailtoLink = (to, subject, body) => {
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
-    return `mailto:${to}?subject=${encodedSubject}&body=${encodedBody}`;
+  const submitFormToApi = async (payload) => {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error || 'Submission failed');
+    }
+    return data;
   };
 
   const handleFormSubmit = async (e) => {
@@ -68,33 +80,32 @@ export default function ModernTrainingCenter() {
     if (!e || !e.preventDefault) return false;
     setIsSubmitting(true);
     
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // In production, send this to your backend
-    const mailtoLink = buildMailtoLink(
-      'azizdhifaoui06@gmail.com',
-      `New Enrollment: ${formData.category}`,
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCategory: ${formData.category}\nDomain: ${formData.domain}\nMessage: ${formData.message}`
-    );
-    
-    console.log('Form Data:', formData);
-    console.log('Mailto Link:', mailtoLink);
-    
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    
-    setTimeout(() => {
-      setShowEnrollModal(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        category: '',
-        domain: '',
-        message: ''
+    try {
+      await submitFormToApi({
+        formType: 'enrollment',
+        language,
+        ...formData
       });
-    }, 2000);
+
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+
+      setTimeout(() => {
+        setShowEnrollModal(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          category: '',
+          domain: '',
+          honeypot: '',
+          message: ''
+        });
+      }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      alert(error.message || t.submitError);
+    }
   };
 
   const handleContactSubmit = async (e) => {
@@ -106,30 +117,30 @@ export default function ModernTrainingCenter() {
     setIsContactSubmitting(true);
     setContactSubmitSuccess(false);
     
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // In production, send this to your backend
-    const mailtoLink = buildMailtoLink(
-      'info@deltaacademy.tn',
-      `Contact Form: ${contactFormData.name}`,
-      `Name: ${contactFormData.name}\nEmail: ${contactFormData.email}\nMessage: ${contactFormData.message}`
-    );
-    
-    console.log('Contact Form Data:', contactFormData);
-    console.log('Mailto Link:', mailtoLink);
-    
-    setIsContactSubmitting(false);
-    
-    // Reset form
-    setContactFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    
-    setContactSubmitSuccess(true);
-    setTimeout(() => setContactSubmitSuccess(false), 5000);
+    try {
+      await submitFormToApi({
+        formType: 'contact',
+        language,
+        ...contactFormData
+      });
+
+      setIsContactSubmitting(false);
+
+      setContactFormData({
+        name: '',
+        email: '',
+        category: '',
+        domain: '',
+        honeypot: '',
+        message: ''
+      });
+
+      setContactSubmitSuccess(true);
+      setTimeout(() => setContactSubmitSuccess(false), 5000);
+    } catch (error) {
+      setIsContactSubmitting(false);
+      alert(error.message || t.submitError);
+    }
   };
 
   const navigateTo = (page) => {

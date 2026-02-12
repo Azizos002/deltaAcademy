@@ -83,6 +83,7 @@ export default function Navbar({
                 aria-expanded={showLangMenu}
               >
                 <Globe size={18} className="text-[#ec960b]" />
+                <span className="text-xl">{languages.find(l => l.code === language)?.flag}</span>
                 <span className={`text-sm ${theme.text} group-hover:text-[#ec960b] transition-colors`}>
                   {language.toUpperCase()}
                 </span>
@@ -104,6 +105,7 @@ export default function Navbar({
                       className={`w-full px-4 py-3 flex items-center justify-between ${language === lang.code ? 'bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white' : `${theme.text} hover:bg-gray-100 dark:hover:bg-gray-700`} transition-all`}
                     >
                       <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}>
+                        <span className="text-2xl">{lang.flag}</span>
                         <span className="font-medium">{lang.name}</span>
                       </div>
                       {language === lang.code && (

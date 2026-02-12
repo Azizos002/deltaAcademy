@@ -13,6 +13,7 @@ export const translations = {
     closeMenu: "Close menu",
     languageLabel: "Language",
     sending: "Sending...",
+    submitError: "Submission failed. Please try again.",
 
     // Hero Section
     heroTitle1: "Transform Your",
@@ -170,6 +171,10 @@ export const translations = {
     phoneNumber: "Phone Number",
     courseCategory: "Course Category",
     selectCategory: "Select category",
+    selectFormation: "Select formation",
+    categoryProfessional: "Professional / Technical Training",
+    categoryHospitality: "Hospitality & Catering Training",
+    categoryLanguages: "Language Training",
     domain: "Domain",
     additionalMessage: "Additional Message",
     additionalMessagePlaceholder: "Tell us about your goals and expectations...",
@@ -213,7 +218,15 @@ export const translations = {
     formation5Title: "Corporate Finance Training",
     formation5Desc: "Executive-level finance program for 50+ professionals",
     formation6Title: "Leadership Development",
-    formation6Desc: "Transformative leadership program for managers and executives"
+    formation6Desc: "Transformative leadership program for managers and executives",
+    formation7Title: "Plumbing & HVAC Practical Training",
+    formation7Desc: "4-month intensive, 80% practical sessions in water, gas and sanitary installation",
+    formation8Title: "Industrial Mechanical Design",
+    formation8Desc: "AutoCAD, Solidworks and CATIA pathway for industrial design careers",
+    formation9Title: "Fast-Food Cuisine Workshop",
+    formation9Desc: "Hands-on culinary operations, food safety and kitchen organization",
+    formation10Title: "Language Training A1-B2",
+    formation10Desc: "Italian, English, German and French for technical and service professions"
   },
   fr: {
     // Navbar
@@ -229,6 +242,7 @@ export const translations = {
     closeMenu: "Fermer le menu",
     languageLabel: "Langue",
     sending: "Envoi...",
+    submitError: "Échec de l'envoi. Veuillez réessayer.",
 
     // Hero Section
     heroTitle1: "Transformez Votre",
@@ -386,6 +400,10 @@ export const translations = {
     phoneNumber: "Numéro de Téléphone",
     courseCategory: "Catégorie de Cours",
     selectCategory: "Sélectionnez une catégorie",
+    selectFormation: "Sélectionnez une formation",
+    categoryProfessional: "Formations Professionnelles / Techniques",
+    categoryHospitality: "Formations Hôtellerie & Restauration",
+    categoryLanguages: "Formations Langues",
     domain: "Domaine",
     additionalMessage: "Message Supplémentaire",
     additionalMessagePlaceholder: "Parlez-nous de vos objectifs et attentes...",
@@ -429,7 +447,15 @@ export const translations = {
     formation5Title: "Formation Finance d'Entreprise",
     formation5Desc: "Programme de finance de niveau exécutif pour plus de 50 professionnels",
     formation6Title: "Développement du Leadership",
-    formation6Desc: "Programme de leadership transformateur pour managers et cadres"
+    formation6Desc: "Programme de leadership transformateur pour managers et cadres",
+    formation7Title: "Formation pratique Plomberie & Chaud-froid",
+    formation7Desc: "Parcours de 4 mois, 80% pratique: eau, gaz, plomberie sanitaire et maintenance",
+    formation8Title: "Conception mécanique industrielle",
+    formation8Desc: "Parcours AutoCAD, Solidworks et CATIA orienté industrie",
+    formation9Title: "Atelier Cuisine Fast-food",
+    formation9Desc: "Techniques de production, hygiène et organisation cuisine en conditions réelles",
+    formation10Title: "Formation Langues A1-B2",
+    formation10Desc: "Italien, Anglais, Allemand et Français pour profils techniques et services"
   },
   ar: {
     // Navbar
@@ -445,6 +471,7 @@ export const translations = {
     closeMenu: "إغلاق القائمة",
     languageLabel: "اللغة",
     sending: "جاري الإرسال...",
+    submitError: "فشل الإرسال. يرجى المحاولة مرة أخرى.",
 
     // Hero Section
     heroTitle1: "حوّل",
@@ -602,6 +629,10 @@ export const translations = {
     phoneNumber: "رقم الهاتف",
     courseCategory: "فئة الدورة",
     selectCategory: "اختر فئة",
+    selectFormation: "اختر التكوين",
+    categoryProfessional: "تكوينات مهنية / تقنية",
+    categoryHospitality: "تكوينات الفندقة والمطاعم",
+    categoryLanguages: "تكوينات اللغات",
     domain: "المجال",
     additionalMessage: "رسالة إضافية",
     additionalMessagePlaceholder: "أخبرنا عن أهدافك وتوقعاتك...",
@@ -645,6 +676,14 @@ export const translations = {
     formation5Title: "تدريب المالية المؤسسية",
     formation5Desc: "برنامج مالية على مستوى تنفيذي لأكثر من 50 محترفاً",
     formation6Title: "تطوير القيادة",
-    formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين"
+    formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين",
+    formation7Title: "تكوين تطبيقي في السباكة والحرارة-البرودة",
+    formation7Desc: "برنامج 4 أشهر، 80٪ تطبيقي في الماء والغاز والسباكة الصحية والصيانة",
+    formation8Title: "التصميم الميكانيكي الصناعي",
+    formation8Desc: "مسار AutoCAD وSolidworks وCATIA للتصميم الصناعي",
+    formation9Title: "ورشة طبخ الوجبات السريعة",
+    formation9Desc: "تطبيق عملي في السلامة الغذائية وتنظيم المطبخ وإدارة الخدمة",
+    formation10Title: "تكوين اللغات A1-B2",
+    formation10Desc: "الإيطالية والإنجليزية والألمانية والفرنسية لفئات مهنية متعددة"
   }
 };

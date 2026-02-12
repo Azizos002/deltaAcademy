@@ -40,3 +40,7 @@
 - Install dependencies: `npm install`
 - Run the development server: `npm start`
 - Build for production: `npm run build`
+- Added Vercel serverless contact endpoint (`/api/contact`) with validation, sanitization, honeypot, and in-memory rate limiting, and wired forms to POST JSON instead of mailto simulation. (api/contact.js, src/App.js)
+- Refactored contact and enrollment forms with shared form field components, category/formation dependent selects, and modernized scrollable form UI. (src/components/form/FormField.js, src/components/ContactPage.js, src/components/EnrollmentModal.js, src/constants/formCatalog.js)
+- Updated homepage previews and previous formations to highlight newly added vocational programs. (src/components/LandingPage.js, src/constants/data.js, src/constants/translations.js)
+- Updated footer with mixed links across all 3 categories and modern social icon set. (src/components/Footer.js)

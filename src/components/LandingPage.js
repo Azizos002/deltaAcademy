@@ -175,8 +175,8 @@ export default function LandingPage({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {previousFormations.slice(0, 3).map((formation, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {previousFormations.slice(0, 4).map((formation, index) => (
               <div
                 key={formation.id}
                 className="group relative overflow-hidden rounded-3xl cursor-pointer transform hover:scale-105 transition-all duration-500"
@@ -245,7 +245,7 @@ export default function LandingPage({
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...courseCategories.certified.domains.slice(0, 2), ...courseCategories.corporate.domains.slice(0, 2)].map((domain, i) => {
+            {[...courseCategories.practical.domains.slice(0, 2), ...courseCategories.certified.domains.slice(0, 2)].map((domain, i) => {
               const DomainIcon = domain.icon;
               return (
                 <div
@@ -267,7 +267,7 @@ export default function LandingPage({
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleEnroll(t[courseCategories.certified.titleKey], t[domain.nameKey] || domain.nameKey);
+                      handleEnroll('', domain.nameKey || '');
                     }}
                     className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
                   >
