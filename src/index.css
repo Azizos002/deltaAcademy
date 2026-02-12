@@ -15,3 +15,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Modern scrollbar for form/dropdown areas */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ec960b rgba(17, 24, 39, 0.15);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.15);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2970ae, #ec960b);
+  border-radius: 999px;
+}

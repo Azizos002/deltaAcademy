@@ -34,7 +34,16 @@ export default function LandingPage({
             <div className="gallery-track">
               {[...galleryImages, ...galleryImages].map((imageUrl, i) => (
                 <div key={`img-${i}`} className="gallery-image-wrapper">
-                  <img src={imageUrl} alt={`Gallery ${i + 1}`} className="gallery-image" />
+                  <img
+                    src={imageUrl}
+                    alt=""
+                    aria-hidden="true"
+                    className="gallery-image"
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    width="800"
+                    height="600"
+                  />
                 </div>
               ))}
             </div>
@@ -109,8 +118,8 @@ export default function LandingPage({
                   <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <Icon className="text-white" size={32} />
                   </div>
-                  <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>{key === 'certified' ? t.certifiedCourses : t.corporateTraining}</h3>
-                  <p className={`${theme.textSecondary} mb-4`}>{key === 'certified' ? t.certifiedCoursesSubtitle : t.corporateTrainingSubtitle}</p>
+                  <h3 className={`text-2xl font-bold ${theme.text} mb-2`}>{t[category.titleKey]}</h3>
+                  <p className={`${theme.textSecondary} mb-4`}>{t[category.subtitleKey]}</p>
                   <p className={`${theme.textSecondary} text-sm mb-6`}>
                     {category.domains.length} {t.specializedDomains}
                   </p>
@@ -166,8 +175,8 @@ export default function LandingPage({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {previousFormations.slice(0, 3).map((formation, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {previousFormations.slice(0, 4).map((formation, index) => (
               <div
                 key={formation.id}
                 className="group relative overflow-hidden rounded-3xl cursor-pointer transform hover:scale-105 transition-all duration-500"
@@ -178,8 +187,12 @@ export default function LandingPage({
                 <div className="relative h-96 overflow-hidden rounded-3xl shadow-2xl group-hover:shadow-[#ec960b]/50 transition-shadow duration-500">
                   <img
                     src={formation.image}
-                    alt={formation.titleKey}
+                    alt={t[formation.titleKey]}
                     className="w-full h-full object-cover transform group-hover:scale-125 group-hover:rotate-3 transition-all duration-700"
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 flex flex-col justify-end p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -232,7 +245,7 @@ export default function LandingPage({
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...courseCategories.certified.domains.slice(0, 2), ...courseCategories.corporate.domains.slice(0, 2)].map((domain, i) => {
+            {[...courseCategories.practical.domains.slice(0, 2), ...courseCategories.certified.domains.slice(0, 2)].map((domain, i) => {
               const DomainIcon = domain.icon;
               return (
                 <div
@@ -244,17 +257,17 @@ export default function LandingPage({
                   }}
                 >
                   <DomainIcon className="text-[#ec960b] mb-4 group-hover:scale-110 transition-transform" size={40} />
-                  <h4 className={`text-xl font-bold ${theme.text} mb-2`}>{domain.name}</h4>
+                  <h4 className={`text-xl font-bold ${theme.text} mb-2`}>{t[domain.nameKey] || domain.nameKey}</h4>
                   <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse' : ''} space-x-2 text-sm ${theme.textSecondary} mb-3`}>
                     <Clock size={16} />
-                    <span>{domain.duration}</span>
+                    <span>{t[domain.durationKey] || domain.durationKey}</span>
                   </div>
                   <div className={`text-xs ${theme.textSecondary} mb-4`}>{domain.modules.length} {t.modules}</div>
                   <button 
                     type="button"
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleEnroll(courseCategories.certified.title, domain.name);
+                      handleEnroll('', domain.nameKey || '');
                     }}
                     className="w-full bg-gradient-to-r from-[#2970ae] to-[#ec960b] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
                   >
@@ -290,4 +303,3 @@ export default function LandingPage({
     </div>
   );
 }
-

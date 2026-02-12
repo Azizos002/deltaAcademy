@@ -18,13 +18,14 @@ export default function ModernTrainingCenter() {
   const [selectedDomain, setSelectedDomain] = useState(null);
   const [isDark, setIsDark] = useState(false);
   const [showEnrollModal, setShowEnrollModal] = useState(false);
-  const [language, setLanguage] = useState('en'); // en, fr, ar
+  const [language, setLanguage] = useState(() => localStorage.getItem('delta-language') || 'fr'); // fr, en, ar
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     category: '',
     domain: '',
+    honeypot: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,20 +33,43 @@ export default function ModernTrainingCenter() {
   const [contactFormData, setContactFormData] = useState({
     name: '',
     email: '',
+    category: '',
+    domain: '',
+    honeypot: '',
     message: ''
   });
   const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+  const [contactSubmitSuccess, setContactSubmitSuccess] = useState(false);
 
   // Get translations for current language
-  const t = translations[language];
+  const t = translations[language] || translations.fr;
+
+  React.useEffect(() => {
+    localStorage.setItem('delta-language', language);
+    document.documentElement.lang = language;
+  }, [language]);
   
   // Use theme hook
   const theme = useTheme(isDark);
 
   const handleEnroll = (category = '', domain = '') => {
-    setFormData({ ...formData, category, domain });
+    setFormData((prev) => ({ ...prev, category, domain }));
     setShowEnrollModal(true);
     setSubmitSuccess(false);
+  };
+
+  const submitFormToApi = async (payload) => {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error || 'Submission failed');
+    }
+    return data;
   };
 
   const handleFormSubmit = async (e) => {
@@ -56,29 +80,32 @@ export default function ModernTrainingCenter() {
     if (!e || !e.preventDefault) return false;
     setIsSubmitting(true);
     
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // In production, send this to your backend
-    const mailtoLink = `mailto:azizdhifaoui06@gmail.com?subject=New Enrollment: ${formData.category}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACategory: ${formData.category}%0D%0ADomain: ${formData.domain}%0D%0AMessage: ${formData.message}`;
-    
-    console.log('Form Data:', formData);
-    console.log('Mailto Link:', mailtoLink);
-    
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    
-    setTimeout(() => {
-      setShowEnrollModal(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        category: '',
-        domain: '',
-        message: ''
+    try {
+      await submitFormToApi({
+        formType: 'enrollment',
+        language,
+        ...formData
       });
-    }, 2000);
+
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+
+      setTimeout(() => {
+        setShowEnrollModal(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          category: '',
+          domain: '',
+          honeypot: '',
+          message: ''
+        });
+      }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      alert(error.message || t.submitError);
+    }
   };
 
   const handleContactSubmit = async (e) => {
@@ -88,27 +115,32 @@ export default function ModernTrainingCenter() {
     }
     if (!e || !e.preventDefault) return false;
     setIsContactSubmitting(true);
+    setContactSubmitSuccess(false);
     
-    // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // In production, send this to your backend
-    const mailtoLink = `mailto:info@deltaacademy.tn?subject=Contact Form: ${contactFormData.name}&body=Name: ${contactFormData.name}%0D%0AEmail: ${contactFormData.email}%0D%0AMessage: ${contactFormData.message}`;
-    
-    console.log('Contact Form Data:', contactFormData);
-    console.log('Mailto Link:', mailtoLink);
-    
-    setIsContactSubmitting(false);
-    
-    // Reset form
-    setContactFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    
-    // Show success message (you can add a toast notification here)
-    alert('Message sent successfully! We will contact you soon.');
+    try {
+      await submitFormToApi({
+        formType: 'contact',
+        language,
+        ...contactFormData
+      });
+
+      setIsContactSubmitting(false);
+
+      setContactFormData({
+        name: '',
+        email: '',
+        category: '',
+        domain: '',
+        honeypot: '',
+        message: ''
+      });
+
+      setContactSubmitSuccess(true);
+      setTimeout(() => setContactSubmitSuccess(false), 5000);
+    } catch (error) {
+      setIsContactSubmitting(false);
+      alert(error.message || t.submitError);
+    }
   };
 
   const navigateTo = (page) => {
@@ -201,6 +233,7 @@ export default function ModernTrainingCenter() {
           contactFormData={contactFormData}
           setContactFormData={setContactFormData}
           isContactSubmitting={isContactSubmitting}
+          contactSubmitSuccess={contactSubmitSuccess}
           handleContactSubmit={handleContactSubmit}
         />
       )}

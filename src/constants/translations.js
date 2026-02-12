@@ -9,6 +9,11 @@ export const translations = {
     enrollNow: "Enroll Now",
     lightMode: "Light Mode",
     darkMode: "Dark Mode",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    languageLabel: "Language",
+    sending: "Sending...",
+    submitError: "Submission failed. Please try again.",
 
     // Hero Section
     heroTitle1: "Transform Your",
@@ -58,6 +63,23 @@ export const translations = {
     projectManagement: "Project Management",
     leadershipManagement: "Leadership & Management",
     technicalSkills: "Technical Skills",
+    practicalTraining: "Practical Training",
+    practicalTrainingSubtitle: "Hands-on job-ready programs for immediate employability",
+    plumbingAndHvac: "Plumbing, Water/Gas & HVAC",
+    mechanicalDesign: "Industrial Mechanical Design",
+    cuisineFastFood: "Fast-Food Cuisine",
+    pastryBakery: "Pastry & Bakery",
+    careAssistant: "Care Assistant",
+    housekeeping: "Housekeeping (Hospitality)",
+    securityGuard: "Security Guard",
+    languageTraining: "Language Training",
+    allLevels: "All levels",
+    beginnerToAdvanced: "Beginner to Advanced",
+    duration2Months: "2 months",
+    duration3Months: "3 months",
+    duration4Months: "4 months",
+    duration6Months: "6 months",
+    durationToDefine: "To be defined",
 
     // Levels
     beginner: "Beginner",
@@ -124,6 +146,7 @@ export const translations = {
     followUsDesc: "Stay connected with us on social media for updates, tips, and success stories",
     visitLocation: "Visit Our Location",
     visitLocationDesc: "Find us in the heart of Tunis. We're easily accessible by public transport.",
+    contactSuccessMessage: "Message sent successfully! We will contact you soon.",
 
     // Footer
     footerDesc: "Empowering individuals and professionals through cutting-edge education and practical skills development.",
@@ -148,6 +171,10 @@ export const translations = {
     phoneNumber: "Phone Number",
     courseCategory: "Course Category",
     selectCategory: "Select category",
+    selectFormation: "Select formation",
+    categoryProfessional: "Professional / Technical Training",
+    categoryHospitality: "Hospitality & Catering Training",
+    categoryLanguages: "Language Training",
     domain: "Domain",
     additionalMessage: "Additional Message",
     additionalMessagePlaceholder: "Tell us about your goals and expectations...",
@@ -167,6 +194,17 @@ export const translations = {
     enrollInCourse: "Enroll in Course",
     duration: "Duration",
     level: "Level",
+    targetProfilesTitle: "Target audience",
+    languageOptionsTitle: "Languages offered",
+    languageList: "Italian • English • German • French",
+    truckDriver: "Truck driver",
+    busTaxiDriver: "Bus / taxi driver",
+    siteSupervisor: "Site supervisor",
+    buildingTechnician: "Building technician",
+    civilEngineeringTechnician: "Civil engineering technician",
+    farmer: "Farmer",
+    cook: "Cook",
+    pastryChef: "Pastry chef",
 
     // Formation Titles & Descriptions
     formation1Title: "Digital Marketing Bootcamp 2024",
@@ -180,7 +218,15 @@ export const translations = {
     formation5Title: "Corporate Finance Training",
     formation5Desc: "Executive-level finance program for 50+ professionals",
     formation6Title: "Leadership Development",
-    formation6Desc: "Transformative leadership program for managers and executives"
+    formation6Desc: "Transformative leadership program for managers and executives",
+    formation7Title: "Plumbing & HVAC Practical Training",
+    formation7Desc: "4-month intensive, 80% practical sessions in water, gas and sanitary installation",
+    formation8Title: "Industrial Mechanical Design",
+    formation8Desc: "AutoCAD, Solidworks and CATIA pathway for industrial design careers",
+    formation9Title: "Fast-Food Cuisine Workshop",
+    formation9Desc: "Hands-on culinary operations, food safety and kitchen organization",
+    formation10Title: "Language Training A1-B2",
+    formation10Desc: "Italian, English, German and French for technical and service professions"
   },
   fr: {
     // Navbar
@@ -192,6 +238,11 @@ export const translations = {
     enrollNow: "S'inscrire",
     lightMode: "Mode Clair",
     darkMode: "Mode Sombre",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    languageLabel: "Langue",
+    sending: "Envoi...",
+    submitError: "Échec de l'envoi. Veuillez réessayer.",
 
     // Hero Section
     heroTitle1: "Transformez Votre",
@@ -241,6 +292,23 @@ export const translations = {
     projectManagement: "Gestion de Projet",
     leadershipManagement: "Leadership et Management",
     technicalSkills: "Compétences Techniques",
+    practicalTraining: "Formation pratique",
+    practicalTrainingSubtitle: "Programmes intensifs orientés métier et employabilité",
+    plumbingAndHvac: "Plomberie, eau/gaz et chaud-froid",
+    mechanicalDesign: "Conception mécanique industrielle",
+    cuisineFastFood: "Cuisine Fast-food",
+    pastryBakery: "Pâtisserie & Boulangerie",
+    careAssistant: "Assistante de vie",
+    housekeeping: "Femme de chambre (hôtellerie)",
+    securityGuard: "Gardiennage",
+    languageTraining: "Formation langues",
+    allLevels: "Tous niveaux",
+    beginnerToAdvanced: "Débutant à avancé",
+    duration2Months: "2 mois",
+    duration3Months: "3 mois",
+    duration4Months: "4 mois",
+    duration6Months: "6 mois",
+    durationToDefine: "À définir",
 
     // Levels
     beginner: "Débutant",
@@ -307,6 +375,7 @@ export const translations = {
     followUsDesc: "Restez connecté avec nous sur les réseaux sociaux pour des mises à jour, des conseils et des histoires de réussite",
     visitLocation: "Visitez Notre Emplacement",
     visitLocationDesc: "Trouvez-nous au cœur de Tunis. Nous sommes facilement accessibles par les transports en commun.",
+    contactSuccessMessage: "Message envoyé avec succès ! Nous vous contacterons bientôt.",
 
     // Footer
     footerDesc: "Autonomiser les individus et les professionnels grâce à une éducation de pointe et au développement de compétences pratiques.",
@@ -331,6 +400,10 @@ export const translations = {
     phoneNumber: "Numéro de Téléphone",
     courseCategory: "Catégorie de Cours",
     selectCategory: "Sélectionnez une catégorie",
+    selectFormation: "Sélectionnez une formation",
+    categoryProfessional: "Formations Professionnelles / Techniques",
+    categoryHospitality: "Formations Hôtellerie & Restauration",
+    categoryLanguages: "Formations Langues",
     domain: "Domaine",
     additionalMessage: "Message Supplémentaire",
     additionalMessagePlaceholder: "Parlez-nous de vos objectifs et attentes...",
@@ -350,6 +423,17 @@ export const translations = {
     enrollInCourse: "S'inscrire au Cours",
     duration: "Durée",
     level: "Niveau",
+    targetProfilesTitle: "Public cible",
+    languageOptionsTitle: "Langues proposées",
+    languageList: "Italien • Anglais • Allemand • Français",
+    truckDriver: "Chauffeur poids lourds",
+    busTaxiDriver: "Chauffeur bus / taxi",
+    siteSupervisor: "Conducteur de travaux",
+    buildingTechnician: "Technicien bâtiment",
+    civilEngineeringTechnician: "Technicien génie civil",
+    farmer: "Agriculteur",
+    cook: "Cuisinier",
+    pastryChef: "Pâtissier",
 
     // Formation Titles & Descriptions
     formation1Title: "Bootcamp Marketing Digital 2024",
@@ -363,7 +447,15 @@ export const translations = {
     formation5Title: "Formation Finance d'Entreprise",
     formation5Desc: "Programme de finance de niveau exécutif pour plus de 50 professionnels",
     formation6Title: "Développement du Leadership",
-    formation6Desc: "Programme de leadership transformateur pour managers et cadres"
+    formation6Desc: "Programme de leadership transformateur pour managers et cadres",
+    formation7Title: "Formation pratique Plomberie & Chaud-froid",
+    formation7Desc: "Parcours de 4 mois, 80% pratique: eau, gaz, plomberie sanitaire et maintenance",
+    formation8Title: "Conception mécanique industrielle",
+    formation8Desc: "Parcours AutoCAD, Solidworks et CATIA orienté industrie",
+    formation9Title: "Atelier Cuisine Fast-food",
+    formation9Desc: "Techniques de production, hygiène et organisation cuisine en conditions réelles",
+    formation10Title: "Formation Langues A1-B2",
+    formation10Desc: "Italien, Anglais, Allemand et Français pour profils techniques et services"
   },
   ar: {
     // Navbar
@@ -375,6 +467,11 @@ export const translations = {
     enrollNow: "سجل الآن",
     lightMode: "الوضع الفاتح",
     darkMode: "الوضع الداكن",
+    openMenu: "فتح القائمة",
+    closeMenu: "إغلاق القائمة",
+    languageLabel: "اللغة",
+    sending: "جاري الإرسال...",
+    submitError: "فشل الإرسال. يرجى المحاولة مرة أخرى.",
 
     // Hero Section
     heroTitle1: "حوّل",
@@ -424,6 +521,23 @@ export const translations = {
     projectManagement: "إدارة المشاريع",
     leadershipManagement: "القيادة والإدارة",
     technicalSkills: "المهارات التقنية",
+    practicalTraining: "التكوين التطبيقي",
+    practicalTrainingSubtitle: "برامج عملية تؤهلكم لسوق الشغل بسرعة",
+    plumbingAndHvac: "السباكة والماء/الغاز والتدفئة والتبريد",
+    mechanicalDesign: "التصميم الميكانيكي الصناعي",
+    cuisineFastFood: "طبخ الوجبات السريعة",
+    pastryBakery: "الحلويات والمخبوزات",
+    careAssistant: "مساعدة حياة",
+    housekeeping: "خدمة الغرف (الفندقة)",
+    securityGuard: "الحراسة",
+    languageTraining: "تكوين اللغات",
+    allLevels: "كل المستويات",
+    beginnerToAdvanced: "من مبتدئ إلى متقدم",
+    duration2Months: "شهران",
+    duration3Months: "3 أشهر",
+    duration4Months: "4 أشهر",
+    duration6Months: "6 أشهر",
+    durationToDefine: "يُحدد لاحقًا",
 
     // Levels
     beginner: "مبتدئ",
@@ -490,6 +604,7 @@ export const translations = {
     followUsDesc: "ابق على اتصال معنا على وسائل التواصل الاجتماعي للحصول على التحديثات والنصائح وقصص النجاح",
     visitLocation: "زر موقعنا",
     visitLocationDesc: "اعثر علينا في قلب تونس. يسهل الوصول إلينا بواسطة وسائل النقل العامة.",
+    contactSuccessMessage: "تم إرسال الرسالة بنجاح! سنتواصل معك قريبًا.",
 
     // Footer
     footerDesc: "تمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية.",
@@ -514,6 +629,10 @@ export const translations = {
     phoneNumber: "رقم الهاتف",
     courseCategory: "فئة الدورة",
     selectCategory: "اختر فئة",
+    selectFormation: "اختر التكوين",
+    categoryProfessional: "تكوينات مهنية / تقنية",
+    categoryHospitality: "تكوينات الفندقة والمطاعم",
+    categoryLanguages: "تكوينات اللغات",
     domain: "المجال",
     additionalMessage: "رسالة إضافية",
     additionalMessagePlaceholder: "أخبرنا عن أهدافك وتوقعاتك...",
@@ -533,6 +652,17 @@ export const translations = {
     enrollInCourse: "التسجيل في الدورة",
     duration: "المدة",
     level: "المستوى",
+    targetProfilesTitle: "الفئة المستهدفة",
+    languageOptionsTitle: "اللغات المتوفرة",
+    languageList: "الإيطالية • الإنجليزية • الألمانية • الفرنسية",
+    truckDriver: "سائق شاحنات ثقيلة",
+    busTaxiDriver: "سائق حافلة / تاكسي",
+    siteSupervisor: "مراقب أشغال",
+    buildingTechnician: "تقني بناء",
+    civilEngineeringTechnician: "تقني هندسة مدنية",
+    farmer: "فلاح",
+    cook: "طباخ",
+    pastryChef: "حلواني",
 
     // Formation Titles & Descriptions
     formation1Title: "معسكر التسويق الرقمي 2024",
@@ -546,7 +676,14 @@ export const translations = {
     formation5Title: "تدريب المالية المؤسسية",
     formation5Desc: "برنامج مالية على مستوى تنفيذي لأكثر من 50 محترفاً",
     formation6Title: "تطوير القيادة",
-    formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين"
+    formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين",
+    formation7Title: "تكوين تطبيقي في السباكة والحرارة-البرودة",
+    formation7Desc: "برنامج 4 أشهر، 80٪ تطبيقي في الماء والغاز والسباكة الصحية والصيانة",
+    formation8Title: "التصميم الميكانيكي الصناعي",
+    formation8Desc: "مسار AutoCAD وSolidworks وCATIA للتصميم الصناعي",
+    formation9Title: "ورشة طبخ الوجبات السريعة",
+    formation9Desc: "تطبيق عملي في السلامة الغذائية وتنظيم المطبخ وإدارة الخدمة",
+    formation10Title: "تكوين اللغات A1-B2",
+    formation10Desc: "الإيطالية والإنجليزية والألمانية والفرنسية لفئات مهنية متعددة"
   }
 };
-
