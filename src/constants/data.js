@@ -155,41 +155,41 @@ export const previousFormations = [
     id: 1,
     titleKey: 'formation7Title',
     descKey: 'formation7Desc',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    image: '/assets/chaudFroid.jpg',
     participants: 45,
-    year: 2024
+    year: 2025
   },
   {
     id: 2,
     titleKey: 'formation8Title',
     descKey: 'formation8Desc',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
+    image: '/assets/mecIndus.webp',
     participants: 38,
-    year: 2024
+    year: 2025
   },
   {
     id: 3,
     titleKey: 'formation9Title',
     descKey: 'formation9Desc',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
+    image: '/assets/fastFood.jpg',
     participants: 32,
-    year: 2023
+    year: 2025
   },
   {
     id: 4,
     titleKey: 'formation10Title',
     descKey: 'formation10Desc',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    image: '/assets/delta7.jpg',
     participants: 28,
-    year: 2023
+    year: 2025
   },
   {
     id: 5,
     titleKey: 'formation5Title',
     descKey: 'formation5Desc',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+    image: '/assets/finance.webp',
     participants: 52,
-    year: 2024
+    year: 2025
   },
   {
     id: 6,
@@ -197,6 +197,6 @@ export const previousFormations = [
     descKey: 'formation6Desc',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
     participants: 40,
-    year: 2023
+    year: 2025
   }
 ];

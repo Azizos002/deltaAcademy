@@ -12,14 +12,14 @@ export default function LandingPage({
   setSelectedCategory 
 }) {
   const galleryImages = [
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop'
+    '/assets/delta1.jpg',
+    '/assets/delta2.jpg',
+    '/assets/delta3.jpg',
+    '/assets/delta4.jpg',
+    '/assets/delta5.jpg',
+    '/assets/delta6.jpg',
+    '/assets/delta7.jpg'
+
   ];
 
   return (
