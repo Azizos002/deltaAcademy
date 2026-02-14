@@ -256,7 +256,7 @@ export const translations = {
     twoSpecializedTracks: "Deux parcours spécialisés pour votre succès",
     certifiedCourses: "Cours Certifiés",
     certifiedCoursesSubtitle: "Pour Étudiants et Chercheurs de Certification",
-    corporateTraining: "Formation en Entreprise",
+    corporateTraining: "Formation Continue",
     corporateTrainingSubtitle: "Pour Professionnels en Activité",
     exploreDomains: "Explorer les Domaines",
     specializedDomains: "domaines spécialisés disponibles",

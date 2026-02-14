@@ -12,13 +12,13 @@ export default function LandingPage({
   setSelectedCategory 
 }) {
   const galleryImages = [
-    '/assets/delta1.jpg',
-    '/assets/delta2.jpg',
-    '/assets/delta3.jpg',
-    '/assets/delta4.jpg',
-    '/assets/delta5.jpg',
-    '/assets/delta6.jpg',
-    '/assets/delta7.jpg'
+    '/assets/plombier.avif',
+    '/assets/plb.jpg',
+    '/assets/chaudFroid.jpg',
+    '/assets/soudure.jpeg',
+    '/assets/electric.jpg',
+    '/assets/carlage.jpg',
+    '/assets/conducteur.jpg'
 
   ];
 
