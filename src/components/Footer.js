@@ -13,10 +13,22 @@ export default function Footer({ theme, language, t, navigateTo }) {
   ];
 
   const socials = [
-    { icon: Facebook, link: 'https://facebook.com/deltaacademy', label: 'Facebook' },
-    { icon: Instagram, link: 'https://instagram.com/deltaacademy', label: 'Instagram' },
-    { icon: Music2, link: 'https://tiktok.com/@deltaacademy', label: 'TikTok' },
-    { icon: MessageCircle, link: 'https://wa.me/216XXXXXXXX', label: 'WhatsApp' }
+    {
+      icon: Facebook,
+      link: "https://facebook.com/deltaacademy",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      link: "https://instagram.com/deltaacademy",
+      label: "Instagram",
+    },
+    { icon: Music2, link: "https://tiktok.com/@deltaacademy", label: "TikTok" },
+    {
+      icon: MessageCircle,
+      link: "https://wa.me/21653363600",
+      label: "WhatsApp",
+    },
   ];
 
   return (
@@ -70,7 +82,7 @@ export default function Footer({ theme, language, t, navigateTo }) {
             <h3 className="text-lg font-bold mb-6 text-white">{t.getInTouch}</h3>
             <ul className="space-y-4">
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}><MapPin size={20} className="text-[#ec960b] flex-shrink-0 mt-1" /><span className="text-gray-400 text-sm whitespace-pre-line">{t.addressText}</span></li>
-              <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}><Phone size={20} className="text-[#ec960b] flex-shrink-0 mt-1" /><span className="text-gray-400 text-sm">+216 XX XXX XXX</span></li>
+              <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}><Phone size={20} className="text-[#ec960b] flex-shrink-0 mt-1" /><span className="text-gray-400 text-sm">+216 53 363 600</span></li>
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}><Mail size={20} className="text-[#ec960b] flex-shrink-0 mt-1" /><span className="text-gray-400 text-sm">deltacademy2026@gmail.com</span></li>
               <li className={`flex items-start ${language === 'ar' ? 'space-x-reverse' : ''} space-x-3`}><Clock size={20} className="text-[#ec960b] flex-shrink-0 mt-1" /><span className="text-gray-400 text-sm whitespace-pre-line">{t.officeHours}</span></li>
             </ul>

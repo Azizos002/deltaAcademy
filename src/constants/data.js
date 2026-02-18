@@ -1,4 +1,25 @@
-import { Award, Briefcase, Target, Zap, Sparkles, TrendingUp, Building2, Users, Wrench, Snowflake, ChefHat, Croissant, HeartHandshake, Hotel, ShieldCheck, Languages, Car, HardHat, Hammer, Wheat } from 'lucide-react';
+import {
+  Award,
+  Briefcase,
+  Target,
+  Zap,
+  Sparkles,
+  TrendingUp,
+  Building2,
+  Users,
+  Wrench,
+  Snowflake,
+  ChefHat,
+  Croissant,
+  HeartHandshake,
+  Hotel,
+  ShieldCheck,
+  Languages,
+  Car,
+  HardHat,
+  Hammer,
+  Wheat
+} from 'lucide-react';
 
 export const courseCategories = {
   certified: {
@@ -6,6 +27,14 @@ export const courseCategories = {
     subtitleKey: 'certifiedCoursesSubtitle',
     icon: Award,
     color: 'from-[#2970ae] to-[#ec960b]',
+
+    // ✅ NEW (translation keys)
+    targetAudienceKeys: [
+      'targetStudent',
+      'targetCertificationSeekers',
+      'targetITProfessionals'
+    ],
+
     domains: [
       {
         nameKey: 'digitalMarketing',
@@ -51,11 +80,20 @@ export const courseCategories = {
       }
     ]
   },
+
   practical: {
     titleKey: 'practicalTraining',
     subtitleKey: 'practicalTrainingSubtitle',
     icon: Wrench,
     color: 'from-[#ec960b] to-[#c17b3f]',
+
+    // ✅ NEW (translation keys)
+    targetAudienceKeys: [
+      'targetBeginners',
+      'targetCareerChangers',
+      'targetPracticalJobSeekers'
+    ],
+
     domains: [
       {
         nameKey: 'plumbingAndHvac',
@@ -101,11 +139,20 @@ export const courseCategories = {
       }
     ]
   },
+
   corporate: {
     titleKey: 'corporateTraining',
     subtitleKey: 'corporateTrainingSubtitle',
     icon: Briefcase,
     color: 'from-[#2970ae] to-[#c17b3f]',
+
+    // ✅ NEW (translation keys)
+    targetAudienceKeys: [
+      'targetWorkingProfessionals',
+      'targetCompanies',
+      'targetManagers'
+    ],
+
     domains: [
       {
         nameKey: 'accountingFinance',

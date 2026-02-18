@@ -1,7 +1,8 @@
 export const translations = {
   en: {
     // Navbar
-    brand: "Delta Academy",
+    registrationNumber: "Registration No: 53 052 06",
+    brand: "Delta Formation",
     home: "Home",
     courses: "Courses",
     about: "About",
@@ -18,13 +19,14 @@ export const translations = {
     // Hero Section
     heroTitle1: "Transform Your",
     heroTitle2: "Future Today",
-    heroSubtitle: "Professional training & certification programs designed for students and working professionals",
+    heroSubtitle:
+      "Professional training & certification programs designed for students and working professionals",
     startLearning: "Start Learning",
     browseCourses: "Browse Courses",
 
     // Course Categories
     chooseYourPath: "Choose Your Path",
-    twoSpecializedTracks: "Two specialized tracks for your success",
+    twoSpecializedTracks: "Three specialized tracks for your success",
     certifiedCourses: "Certified Courses",
     certifiedCoursesSubtitle: "For Students & Certification Seekers",
     corporateTraining: "Corporate Training",
@@ -40,7 +42,8 @@ export const translations = {
 
     // Previous Formations
     previousFormations: "Our Previous Formations",
-    previousFormationsSubtitle: "Witness the success stories that built careers and transformed lives",
+    previousFormationsSubtitle:
+      "Witness the success stories that built careers and transformed lives",
     viewAllStories: "View All Success Stories",
     graduates: "Graduates",
 
@@ -51,7 +54,8 @@ export const translations = {
 
     // Final CTA
     readyToTransform: "Ready to Transform Your Career?",
-    joinThousands: "Join thousands of successful learners who have achieved their goals with us",
+    joinThousands:
+      "Join thousands of successful learners who have achieved their goals with us",
     getStartedToday: "Get Started Today",
 
     // Course Domains
@@ -64,7 +68,8 @@ export const translations = {
     leadershipManagement: "Leadership & Management",
     technicalSkills: "Technical Skills",
     practicalTraining: "Practical Training",
-    practicalTrainingSubtitle: "Hands-on job-ready programs for immediate employability",
+    practicalTrainingSubtitle:
+      "Hands-on job-ready programs for immediate employability",
     plumbingAndHvac: "Plumbing, Water/Gas & HVAC",
     mechanicalDesign: "Industrial Mechanical Design",
     cuisineFastFood: "Fast-Food Cuisine",
@@ -89,15 +94,20 @@ export const translations = {
     executive: "Executive",
 
     // About Page
-    aboutTitle: "About Delta Academy",
-    aboutIntro: "is a premier training center dedicated to empowering individuals and professionals through cutting-edge education and practical skills development. Since our establishment, we have been at the forefront of professional training in Tunisia, transforming careers and shaping futures.",
+    aboutTitle: "About Delta Formation",
+    aboutIntro:
+      "is a premier training center dedicated to empowering individuals and professionals through cutting-edge education and practical skills development. Since our establishment, we have been at the forefront of professional training in Tunisia, transforming careers and shaping futures.",
     aboutPara1: "We specialize in two distinct training tracks:",
     aboutPara1Bold1: "Certified Courses",
-    aboutPara1Text: "for students and certification seekers looking to break into their desired fields, and",
+    aboutPara1Text:
+      "for students and certification seekers looking to break into their desired fields, and",
     aboutPara1Bold2: "Corporate Training",
-    aboutPara1Text2: "for working professionals aiming to advance their careers and stay competitive in today's rapidly evolving job market.",
-    aboutPara2: "Our expert instructors bring real-world experience to the classroom, ensuring that every course is packed with practical insights and industry-relevant knowledge. With state-of-the-art facilities, hands-on projects, and a strong focus on job placement, we've helped over 5,000 students and professionals achieve their career goals.",
-    aboutPara3: "At Delta Academy, we believe that education should be accessible, engaging, and results-driven. Our mission is to bridge the gap between academic learning and industry requirements, providing our students with the tools, knowledge, and confidence they need to succeed in their chosen fields.",
+    aboutPara1Text2:
+      "for working professionals aiming to advance their careers and stay competitive in today's rapidly evolving job market.",
+    aboutPara2:
+      "Our expert instructors bring real-world experience to the classroom, ensuring that every course is packed with practical insights and industry-relevant knowledge. With state-of-the-art facilities, hands-on projects, and a strong focus on job placement, we've helped over 5,000 students and professionals achieve their career goals.",
+    aboutPara3:
+      "At Delta Formation, we believe that education should be accessible, engaging, and results-driven. Our mission is to bridge the gap between academic learning and industry requirements, providing our students with the tools, knowledge, and confidence they need to succeed in their chosen fields.",
 
     // About Features
     certifiedPrograms: "Certified Programs",
@@ -114,23 +124,29 @@ export const translations = {
 
     // Success Stories
     successStories: "Our Success Stories",
-    successStoriesSubtitle: "Discover the transformative programs that have shaped thousands of careers",
+    successStoriesSubtitle:
+      "Discover the transformative programs that have shaped thousands of careers",
     participants: "participants",
 
     // Trust Indicators
-    whyTrust: "Why Trust Delta Academy?",
+    whyTrust: "Why Trust Delta Formation?",
     provenTrackRecord: "Proven Track Record",
-    provenTrackRecordDesc: "Over 5,000+ successful graduates working in leading companies across various industries",
+    provenTrackRecordDesc:
+      "Over 5,000+ successful graduates working in leading companies across various industries",
     industryPartnerships: "Industry Partnerships",
-    industryPartnershipsDesc: "Collaborations with 50+ companies ensuring our curriculum meets real market demands",
+    industryPartnershipsDesc:
+      "Collaborations with 50+ companies ensuring our curriculum meets real market demands",
     expertFaculty: "Expert Faculty",
-    expertFacultyDesc: "Our instructors are seasoned professionals with 10+ years of industry experience",
+    expertFacultyDesc:
+      "Our instructors are seasoned professionals with 10+ years of industry experience",
     lifetimeSupport: "Lifetime Support",
-    lifetimeSupportDesc: "Access to our alumni network, job placement assistance, and continuous learning resources",
+    lifetimeSupportDesc:
+      "Access to our alumni network, job placement assistance, and continuous learning resources",
 
     // Contact Page
     getInTouch: "Get in Touch",
-    getInTouchSubtitle: "We'd love to hear from you. Reach out to us through any of these channels.",
+    getInTouchSubtitle:
+      "We'd love to hear from you. Reach out to us through any of these channels.",
     sendMessage: "Send us a Message",
     name: "Name",
     email: "Email",
@@ -143,13 +159,17 @@ export const translations = {
     addressText: "Tunis, Tunisia\nAvenue Habib Bourguiba",
     phone: "Phone",
     followUs: "Follow Us",
-    followUsDesc: "Stay connected with us on social media for updates, tips, and success stories",
+    followUsDesc:
+      "Stay connected with us on social media for updates, tips, and success stories",
     visitLocation: "Visit Our Location",
-    visitLocationDesc: "Find us in the heart of Tunis. We're easily accessible by public transport.",
-    contactSuccessMessage: "Message sent successfully! We will contact you soon.",
+    visitLocationDesc:
+      "Find us in the heart of Tunis. We're easily accessible by public transport.",
+    contactSuccessMessage:
+      "Message sent successfully! We will contact you soon.",
 
     // Footer
-    footerDesc: "Empowering individuals and professionals through cutting-edge education and practical skills development.",
+    footerDesc:
+      "Empowering individuals and professionals through cutting-edge education and practical skills development.",
     quickLinks: "Quick Links",
     allCourses: "All Courses",
     aboutUs: "About Us",
@@ -157,7 +177,7 @@ export const translations = {
     corporateFinance: "Corporate Finance",
     leadershipTraining: "Leadership Training",
     officeHours: "Mon - Fri: 9:00 AM - 6:00 PM\nSat: 10:00 AM - 4:00 PM",
-    allRightsReserved: "Delta Academy. All rights reserved.",
+    allRightsReserved: "Delta Formation. All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     cookiePolicy: "Cookie Policy",
@@ -177,7 +197,8 @@ export const translations = {
     categoryLanguages: "Language Training",
     domain: "Domain",
     additionalMessage: "Additional Message",
-    additionalMessagePlaceholder: "Tell us about your goals and expectations...",
+    additionalMessagePlaceholder:
+      "Tell us about your goals and expectations...",
     submitEnrollment: "Submit Enrollment",
     submitting: "Submitting...",
     enrollmentSuccess: "Enrollment Submitted!",
@@ -186,7 +207,7 @@ export const translations = {
     // Course Page
     allCoursesTitle: "All Courses",
     allCoursesSubtitle: "Discover your perfect learning path",
-    viewAllDomains: "View All Domains",
+    viewAllDomains: "View All",
     expertInstructorsText: "Expert instructors",
     backToCategories: "Back to Categories",
     backToDomains: "Back to Domains",
@@ -208,29 +229,48 @@ export const translations = {
 
     // Formation Titles & Descriptions
     formation1Title: "Digital Marketing Bootcamp 2024",
-    formation1Desc: "Intensive 3-month program with 45 graduates now working in leading agencies",
+    formation1Desc:
+      "Intensive 3-month program with 45 graduates now working in leading agencies",
     formation2Title: "Web Development Masterclass",
-    formation2Desc: "Full-stack development training with 98% job placement rate",
+    formation2Desc:
+      "Full-stack development training with 98% job placement rate",
     formation3Title: "Graphic Design Professional",
     formation3Desc: "Creative design course producing award-winning designers",
     formation4Title: "Data Analytics Excellence",
-    formation4Desc: "Advanced analytics training with real-world business projects",
+    formation4Desc:
+      "Advanced analytics training with real-world business projects",
     formation5Title: "Corporate Finance Training",
     formation5Desc: "Executive-level finance program for 50+ professionals",
     formation6Title: "Leadership Development",
-    formation6Desc: "Transformative leadership program for managers and executives",
+    formation6Desc:
+      "Transformative leadership program for managers and executives",
     formation7Title: "Plumbing & HVAC Practical Training",
-    formation7Desc: "4-month intensive, 80% practical sessions in water, gas and sanitary installation",
+    formation7Desc:
+      "4-month intensive, 80% practical sessions in water, gas and sanitary installation",
     formation8Title: "Industrial Mechanical Design",
-    formation8Desc: "AutoCAD, Solidworks and CATIA pathway for industrial design careers",
+    formation8Desc:
+      "AutoCAD, Solidworks and CATIA pathway for industrial design careers",
     formation9Title: "Fast-Food Cuisine Workshop",
-    formation9Desc: "Hands-on culinary operations, food safety and kitchen organization",
+    formation9Desc:
+      "Hands-on culinary operations, food safety and kitchen organization",
     formation10Title: "Language Training A1-B2",
-    formation10Desc: "Italian, English, German and French for technical and service professions"
+    formation10Desc:
+      "Italian, English, German and French for technical and service professions",
+    populationTarget: "Target audience:",
+    targetStudent: "Students",
+    targetCertificationSeekers: "Certification seekers",
+    targetITProfessionals: "IT professionals",
+    targetCareerChangers: "Career changers",
+    targetBeginners: "Beginners",
+    targetPracticalJobSeekers: "Job seekers (practical trades)",
+    targetWorkingProfessionals: "Working professionals",
+    targetCompanies: "Companies",
+    targetManagers: "Managers & executives",
   },
   fr: {
     // Navbar
-    brand: "Delta Academy",
+    registrationNumber: "N° d'enregistrement : 53 052 06",
+    brand: "Delta Formation",
     home: "Accueil",
     courses: "Cours",
     about: "À Propos",
@@ -247,13 +287,14 @@ export const translations = {
     // Hero Section
     heroTitle1: "Transformez Votre",
     heroTitle2: "Avenir Aujourd'hui",
-    heroSubtitle: "Programmes de formation professionnelle et de certification conçus pour les étudiants et les professionnels",
+    heroSubtitle:
+      "Programmes de formation professionnelle et de certification conçus pour les étudiants et les professionnels",
     startLearning: "Commencer",
     browseCourses: "Parcourir les Cours",
 
     // Course Categories
     chooseYourPath: "Choisissez Votre Parcours",
-    twoSpecializedTracks: "Deux parcours spécialisés pour votre succès",
+    twoSpecializedTracks: "Trois parcours spécialisés pour votre succès",
     certifiedCourses: "Cours Certifiés",
     certifiedCoursesSubtitle: "Pour Étudiants et Chercheurs de Certification",
     corporateTraining: "Formation Continue",
@@ -269,7 +310,8 @@ export const translations = {
 
     // Previous Formations
     previousFormations: "Nos Formations Précédentes",
-    previousFormationsSubtitle: "Découvrez les réussites qui ont construit des carrières et transformé des vies",
+    previousFormationsSubtitle:
+      "Découvrez les réussites qui ont construit des carrières et transformé des vies",
     viewAllStories: "Voir Toutes les Réussites",
     graduates: "Diplômés",
 
@@ -280,7 +322,8 @@ export const translations = {
 
     // Final CTA
     readyToTransform: "Prêt à Transformer Votre Carrière?",
-    joinThousands: "Rejoignez des milliers d'apprenants qui ont atteint leurs objectifs avec nous",
+    joinThousands:
+      "Rejoignez des milliers d'apprenants qui ont atteint leurs objectifs avec nous",
     getStartedToday: "Commencez Aujourd'hui",
 
     // Course Domains
@@ -293,7 +336,8 @@ export const translations = {
     leadershipManagement: "Leadership et Management",
     technicalSkills: "Compétences Techniques",
     practicalTraining: "Formation pratique",
-    practicalTrainingSubtitle: "Programmes intensifs orientés métier et employabilité",
+    practicalTrainingSubtitle:
+      "Programmes intensifs orientés métier et employabilité",
     plumbingAndHvac: "Plomberie, eau/gaz et chaud-froid",
     mechanicalDesign: "Conception mécanique industrielle",
     cuisineFastFood: "Cuisine Fast-food",
@@ -318,15 +362,21 @@ export const translations = {
     executive: "Exécutif",
 
     // About Page
-    aboutTitle: "À Propos de Delta Academy",
-    aboutIntro: "est un centre de formation de premier plan dédié à l'autonomisation des individus et des professionnels grâce à une éducation de pointe et au développement de compétences pratiques. Depuis notre création, nous sommes à l'avant-garde de la formation professionnelle en Tunisie, transformant les carrières et façonnant l'avenir.",
-    aboutPara1: "Nous nous spécialisons dans deux parcours de formation distincts :",
+    aboutTitle: "À Propos de Delta Formation",
+    aboutIntro:
+      "est un centre de formation de premier plan dédié à l'autonomisation des individus et des professionnels grâce à une éducation de pointe et au développement de compétences pratiques. Depuis notre création, nous sommes à l'avant-garde de la formation professionnelle en Tunisie, transformant les carrières et façonnant l'avenir.",
+    aboutPara1:
+      "Nous nous spécialisons dans deux parcours de formation distincts :",
     aboutPara1Bold1: "Cours Certifiés",
-    aboutPara1Text: "pour les étudiants et les demandeurs de certification qui cherchent à entrer dans les domaines souhaités, et",
+    aboutPara1Text:
+      "pour les étudiants et les demandeurs de certification qui cherchent à entrer dans les domaines souhaités, et",
     aboutPara1Bold2: "Formation en Entreprise",
-    aboutPara1Text2: "pour les professionnels en activité qui visent à faire progresser leur carrière et à rester compétitifs sur le marché du travail en évolution rapide d'aujourd'hui.",
-    aboutPara2: "Nos instructeurs experts apportent une expérience du monde réel en classe, garantissant que chaque cours regorge d'informations pratiques et de connaissances pertinentes pour l'industrie. Avec des installations de pointe, des projets pratiques et une forte concentration sur le placement professionnel, nous avons aidé plus de 5 000 étudiants et professionnels à atteindre leurs objectifs de carrière.",
-    aboutPara3: "Chez Delta Academy, nous croyons que l'éducation doit être accessible, engageante et axée sur les résultats. Notre mission est de combler le fossé entre l'apprentissage académique et les exigences de l'industrie, en fournissant à nos étudiants les outils, les connaissances et la confiance dont ils ont besoin pour réussir dans les domaines qu'ils ont choisis.",
+    aboutPara1Text2:
+      "pour les professionnels en activité qui visent à faire progresser leur carrière et à rester compétitifs sur le marché du travail en évolution rapide d'aujourd'hui.",
+    aboutPara2:
+      "Nos instructeurs experts apportent une expérience du monde réel en classe, garantissant que chaque cours regorge d'informations pratiques et de connaissances pertinentes pour l'industrie. Avec des installations de pointe, des projets pratiques et une forte concentration sur le placement professionnel, nous avons aidé plus de 5 000 étudiants et professionnels à atteindre leurs objectifs de carrière.",
+    aboutPara3:
+      "Chez Delta Formation, nous croyons que l'éducation doit être accessible, engageante et axée sur les résultats. Notre mission est de combler le fossé entre l'apprentissage académique et les exigences de l'industrie, en fournissant à nos étudiants les outils, les connaissances et la confiance dont ils ont besoin pour réussir dans les domaines qu'ils ont choisis.",
 
     // About Features
     certifiedPrograms: "Programmes Certifiés",
@@ -343,23 +393,29 @@ export const translations = {
 
     // Success Stories
     successStories: "Nos Réussites",
-    successStoriesSubtitle: "Découvrez les programmes transformateurs qui ont façonné des milliers de carrières",
+    successStoriesSubtitle:
+      "Découvrez les programmes transformateurs qui ont façonné des milliers de carrières",
     participants: "participants",
 
     // Trust Indicators
-    whyTrust: "Pourquoi Faire Confiance à Delta Academy?",
+    whyTrust: "Pourquoi Faire Confiance à Delta Formation?",
     provenTrackRecord: "Bilan Éprouvé",
-    provenTrackRecordDesc: "Plus de 5 000 diplômés travaillant dans des entreprises leaders dans divers secteurs",
+    provenTrackRecordDesc:
+      "Plus de 5 000 diplômés travaillant dans des entreprises leaders dans divers secteurs",
     industryPartnerships: "Partenariats Industriels",
-    industryPartnershipsDesc: "Collaborations avec plus de 50 entreprises garantissant que notre programme répond aux demandes réelles du marché",
+    industryPartnershipsDesc:
+      "Collaborations avec plus de 50 entreprises garantissant que notre programme répond aux demandes réelles du marché",
     expertFaculty: "Faculté Experte",
-    expertFacultyDesc: "Nos instructeurs sont des professionnels chevronnés avec plus de 10 ans d'expérience dans l'industrie",
+    expertFacultyDesc:
+      "Nos instructeurs sont des professionnels chevronnés avec plus de 10 ans d'expérience dans l'industrie",
     lifetimeSupport: "Support à Vie",
-    lifetimeSupportDesc: "Accès à notre réseau d'anciens élèves, assistance au placement professionnel et ressources d'apprentissage continues",
+    lifetimeSupportDesc:
+      "Accès à notre réseau d'anciens élèves, assistance au placement professionnel et ressources d'apprentissage continues",
 
     // Contact Page
     getInTouch: "Contactez-Nous",
-    getInTouchSubtitle: "Nous aimerions avoir de vos nouvelles. Contactez-nous via l'un de ces canaux.",
+    getInTouchSubtitle:
+      "Nous aimerions avoir de vos nouvelles. Contactez-nous via l'un de ces canaux.",
     sendMessage: "Envoyez-nous un Message",
     name: "Nom",
     email: "Email",
@@ -372,13 +428,17 @@ export const translations = {
     addressText: "Tunis, Tunisie\nAvenue Habib Bourguiba",
     phone: "Téléphone",
     followUs: "Suivez-Nous",
-    followUsDesc: "Restez connecté avec nous sur les réseaux sociaux pour des mises à jour, des conseils et des histoires de réussite",
+    followUsDesc:
+      "Restez connecté avec nous sur les réseaux sociaux pour des mises à jour, des conseils et des histoires de réussite",
     visitLocation: "Visitez Notre Emplacement",
-    visitLocationDesc: "Trouvez-nous au cœur de Tunis. Nous sommes facilement accessibles par les transports en commun.",
-    contactSuccessMessage: "Message envoyé avec succès ! Nous vous contacterons bientôt.",
+    visitLocationDesc:
+      "Trouvez-nous au cœur de Tunis. Nous sommes facilement accessibles par les transports en commun.",
+    contactSuccessMessage:
+      "Message envoyé avec succès ! Nous vous contacterons bientôt.",
 
     // Footer
-    footerDesc: "Autonomiser les individus et les professionnels grâce à une éducation de pointe et au développement de compétences pratiques.",
+    footerDesc:
+      "Autonomiser les individus et les professionnels grâce à une éducation de pointe et au développement de compétences pratiques.",
     quickLinks: "Liens Rapides",
     allCourses: "Tous les Cours",
     aboutUs: "À Propos",
@@ -386,7 +446,7 @@ export const translations = {
     corporateFinance: "Finance d'Entreprise",
     leadershipTraining: "Formation en Leadership",
     officeHours: "Lun - Ven: 9h00 - 18h00\nSam: 10h00 - 16h00",
-    allRightsReserved: "Delta Academy. Tous droits réservés.",
+    allRightsReserved: "Delta Formation. Tous droits réservés.",
     privacyPolicy: "Politique de Confidentialité",
     termsOfService: "Conditions d'Utilisation",
     cookiePolicy: "Politique des Cookies",
@@ -415,7 +475,7 @@ export const translations = {
     // Course Page
     allCoursesTitle: "Tous les Cours",
     allCoursesSubtitle: "Découvrez votre parcours d'apprentissage parfait",
-    viewAllDomains: "Voir Tous les Domaines",
+    viewAllDomains: "Voir Tous",
     expertInstructorsText: "Instructeurs experts",
     backToCategories: "Retour aux Catégories",
     backToDomains: "Retour aux Domaines",
@@ -437,28 +497,46 @@ export const translations = {
 
     // Formation Titles & Descriptions
     formation1Title: "Bootcamp Marketing Digital 2024",
-    formation1Desc: "Programme intensif de 3 mois avec 45 diplômés travaillant maintenant dans des agences leaders",
+    formation1Desc:
+      "Programme intensif de 3 mois avec 45 diplômés travaillant maintenant dans des agences leaders",
     formation2Title: "Masterclass Développement Web",
     formation2Desc: "Formation full-stack avec un taux de placement de 98%",
     formation3Title: "Design Graphique Professionnel",
     formation3Desc: "Cours de design créatif produisant des designers primés",
     formation4Title: "Excellence en Analyse de Données",
-    formation4Desc: "Formation avancée en analytique avec des projets commerciaux réels",
+    formation4Desc:
+      "Formation avancée en analytique avec des projets commerciaux réels",
     formation5Title: "Formation Finance d'Entreprise",
-    formation5Desc: "Programme de finance de niveau exécutif pour plus de 50 professionnels",
+    formation5Desc:
+      "Programme de finance de niveau exécutif pour plus de 50 professionnels",
     formation6Title: "Développement du Leadership",
-    formation6Desc: "Programme de leadership transformateur pour managers et cadres",
+    formation6Desc:
+      "Programme de leadership transformateur pour managers et cadres",
     formation7Title: "Formation pratique Plomberie & Chaud-froid",
-    formation7Desc: "Parcours de 4 mois, 80% pratique: eau, gaz, plomberie sanitaire et maintenance",
+    formation7Desc:
+      "Parcours de 4 mois, 80% pratique: eau, gaz, plomberie sanitaire et maintenance",
     formation8Title: "Conception mécanique industrielle",
     formation8Desc: "Parcours AutoCAD, Solidworks et CATIA orienté industrie",
     formation9Title: "Atelier Cuisine Fast-food",
-    formation9Desc: "Techniques de production, hygiène et organisation cuisine en conditions réelles",
+    formation9Desc:
+      "Techniques de production, hygiène et organisation cuisine en conditions réelles",
     formation10Title: "Formation Langues A1-B2",
-    formation10Desc: "Italien, Anglais, Allemand et Français pour profils techniques et services"
+    formation10Desc:
+      "Italien, Anglais, Allemand et Français pour profils techniques et services",
+    populationTarget: "Population cible :",
+    targetStudent: "Étudiants",
+    targetCertificationSeekers: "Chercheurs de certification",
+    targetITProfessionals: "Professionnels IT",
+    targetCareerChangers: "Personnes en reconversion",
+    targetBeginners: "Débutants",
+    targetPracticalJobSeekers: "Candidats à un métier pratique",
+    targetWorkingProfessionals: "Professionnels en activité",
+    targetCompanies: "Entreprises",
+    targetManagers: "Cadres & managers",
   },
   ar: {
     // Navbar
+    registrationNumber: "رقم التسجيل: 53 052 06",
     brand: "أكاديمية دلتا",
     home: "الرئيسية",
     courses: "الدورات",
@@ -482,7 +560,7 @@ export const translations = {
 
     // Course Categories
     chooseYourPath: "اختر مسارك",
-    twoSpecializedTracks: "مساران متخصصان لنجاحك",
+    twoSpecializedTracks: "ثلاثة مسارات متخصصة لنجاحك",
     certifiedCourses: "دورات معتمدة",
     certifiedCoursesSubtitle: "للطلاب والباحثين عن الشهادات",
     corporateTraining: "التدريب المؤسسي",
@@ -548,14 +626,19 @@ export const translations = {
 
     // About Page
     aboutTitle: "عن أكاديمية دلتا",
-    aboutIntro: "هي مركز تدريب رائد مكرس لتمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية. منذ تأسيسنا، كنا في طليعة التدريب المهني في تونس، نحول المهن ونشكل المستقبل.",
+    aboutIntro:
+      "هي مركز تدريب رائد مكرس لتمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية. منذ تأسيسنا، كنا في طليعة التدريب المهني في تونس، نحول المهن ونشكل المستقبل.",
     aboutPara1: "نتخصص في مسارين تدريبيين متميزين:",
     aboutPara1Bold1: "الدورات المعتمدة",
-    aboutPara1Text: "للطلاب والباحثين عن الشهادات الذين يتطلعون إلى دخول المجالات المرغوبة، و",
+    aboutPara1Text:
+      "للطلاب والباحثين عن الشهادات الذين يتطلعون إلى دخول المجالات المرغوبة، و",
     aboutPara1Bold2: "التدريب المؤسسي",
-    aboutPara1Text2: "للمهنيين العاملين الذين يهدفون إلى تطوير حياتهم المهنية والبقاء تنافسيين في سوق العمل المتطور بسرعة اليوم.",
-    aboutPara2: "يجلب مدربونا الخبراء خبرة العالم الحقيقي إلى الفصل الدراسي، مما يضمن أن كل دورة مليئة بالرؤى العملية والمعرفة ذات الصلة بالصناعة. مع مرافق حديثة ومشاريع عملية وتركيز قوي على التوظيف، ساعدنا أكثر من 5000 طالب ومحترف على تحقيق أهدافهم المهنية.",
-    aboutPara3: "في أكاديمية دلتا، نؤمن بأن التعليم يجب أن يكون متاحاً وجذاباً وموجهاً نحو النتائج. مهمتنا هي سد الفجوة بين التعلم الأكاديمي ومتطلبات الصناعة، وتزويد طلابنا بالأدوات والمعرفة والثقة التي يحتاجونها للنجاح في المجالات التي اختاروها.",
+    aboutPara1Text2:
+      "للمهنيين العاملين الذين يهدفون إلى تطوير حياتهم المهنية والبقاء تنافسيين في سوق العمل المتطور بسرعة اليوم.",
+    aboutPara2:
+      "يجلب مدربونا الخبراء خبرة العالم الحقيقي إلى الفصل الدراسي، مما يضمن أن كل دورة مليئة بالرؤى العملية والمعرفة ذات الصلة بالصناعة. مع مرافق حديثة ومشاريع عملية وتركيز قوي على التوظيف، ساعدنا أكثر من 5000 طالب ومحترف على تحقيق أهدافهم المهنية.",
+    aboutPara3:
+      "في أكاديمية دلتا، نؤمن بأن التعليم يجب أن يكون متاحاً وجذاباً وموجهاً نحو النتائج. مهمتنا هي سد الفجوة بين التعلم الأكاديمي ومتطلبات الصناعة، وتزويد طلابنا بالأدوات والمعرفة والثقة التي يحتاجونها للنجاح في المجالات التي اختاروها.",
 
     // About Features
     certifiedPrograms: "برامج معتمدة",
@@ -578,13 +661,17 @@ export const translations = {
     // Trust Indicators
     whyTrust: "لماذا تثق في أكاديمية دلتا؟",
     provenTrackRecord: "سجل حافل مثبت",
-    provenTrackRecordDesc: "أكثر من 5000 خريج ناجح يعملون في شركات رائدة عبر مختلف الصناعات",
+    provenTrackRecordDesc:
+      "أكثر من 5000 خريج ناجح يعملون في شركات رائدة عبر مختلف الصناعات",
     industryPartnerships: "شراكات صناعية",
-    industryPartnershipsDesc: "تعاون مع أكثر من 50 شركة لضمان تلبية مناهجنا لمتطلبات السوق الحقيقية",
+    industryPartnershipsDesc:
+      "تعاون مع أكثر من 50 شركة لضمان تلبية مناهجنا لمتطلبات السوق الحقيقية",
     expertFaculty: "هيئة تدريس خبيرة",
-    expertFacultyDesc: "مدربونا هم محترفون متمرسون يتمتعون بخبرة تزيد عن 10 سنوات في الصناعة",
+    expertFacultyDesc:
+      "مدربونا هم محترفون متمرسون يتمتعون بخبرة تزيد عن 10 سنوات في الصناعة",
     lifetimeSupport: "دعم مدى الحياة",
-    lifetimeSupportDesc: "الوصول إلى شبكة خريجينا، والمساعدة في التوظيف، وموارد التعلم المستمر",
+    lifetimeSupportDesc:
+      "الوصول إلى شبكة خريجينا، والمساعدة في التوظيف، وموارد التعلم المستمر",
 
     // Contact Page
     getInTouch: "تواصل معنا",
@@ -601,13 +688,16 @@ export const translations = {
     addressText: "تونس، تونس\nشارع الحبيب بورقيبة",
     phone: "الهاتف",
     followUs: "تابعنا",
-    followUsDesc: "ابق على اتصال معنا على وسائل التواصل الاجتماعي للحصول على التحديثات والنصائح وقصص النجاح",
+    followUsDesc:
+      "ابق على اتصال معنا على وسائل التواصل الاجتماعي للحصول على التحديثات والنصائح وقصص النجاح",
     visitLocation: "زر موقعنا",
-    visitLocationDesc: "اعثر علينا في قلب تونس. يسهل الوصول إلينا بواسطة وسائل النقل العامة.",
+    visitLocationDesc:
+      "اعثر علينا في قلب تونس. يسهل الوصول إلينا بواسطة وسائل النقل العامة.",
     contactSuccessMessage: "تم إرسال الرسالة بنجاح! سنتواصل معك قريبًا.",
 
     // Footer
-    footerDesc: "تمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية.",
+    footerDesc:
+      "تمكين الأفراد والمهنيين من خلال التعليم المتطور وتطوير المهارات العملية.",
     quickLinks: "روابط سريعة",
     allCourses: "جميع الدورات",
     aboutUs: "من نحن",
@@ -666,7 +756,8 @@ export const translations = {
 
     // Formation Titles & Descriptions
     formation1Title: "معسكر التسويق الرقمي 2024",
-    formation1Desc: "برنامج مكثف مدته 3 أشهر مع 45 خريجاً يعملون الآن في وكالات رائدة",
+    formation1Desc:
+      "برنامج مكثف مدته 3 أشهر مع 45 خريجاً يعملون الآن في وكالات رائدة",
     formation2Title: "ماستر كلاس تطوير الويب",
     formation2Desc: "تدريب تطوير كامل المكدس مع معدل توظيف 98٪",
     formation3Title: "التصميم الجرافيكي المحترف",
@@ -678,12 +769,25 @@ export const translations = {
     formation6Title: "تطوير القيادة",
     formation6Desc: "برنامج قيادة تحويلي للمديرين والمسؤولين التنفيذيين",
     formation7Title: "تكوين تطبيقي في السباكة والحرارة-البرودة",
-    formation7Desc: "برنامج 4 أشهر، 80٪ تطبيقي في الماء والغاز والسباكة الصحية والصيانة",
+    formation7Desc:
+      "برنامج 4 أشهر، 80٪ تطبيقي في الماء والغاز والسباكة الصحية والصيانة",
     formation8Title: "التصميم الميكانيكي الصناعي",
     formation8Desc: "مسار AutoCAD وSolidworks وCATIA للتصميم الصناعي",
     formation9Title: "ورشة طبخ الوجبات السريعة",
-    formation9Desc: "تطبيق عملي في السلامة الغذائية وتنظيم المطبخ وإدارة الخدمة",
+    formation9Desc:
+      "تطبيق عملي في السلامة الغذائية وتنظيم المطبخ وإدارة الخدمة",
     formation10Title: "تكوين اللغات A1-B2",
-    formation10Desc: "الإيطالية والإنجليزية والألمانية والفرنسية لفئات مهنية متعددة"
-  }
+    formation10Desc:
+      "الإيطالية والإنجليزية والألمانية والفرنسية لفئات مهنية متعددة",
+    populationTarget: "الفئة المستهدفة:",
+    targetStudent: "الطلاب",
+    targetCertificationSeekers: "الباحثون عن الشهادات",
+    targetITProfessionals: "محترفو تكنولوجيا المعلومات",
+    targetCareerChangers: "الأشخاص في إعادة توجيه مهني",
+    targetBeginners: "المبتدئون",
+    targetPracticalJobSeekers: "الباحثون عن عمل (مهن تطبيقية)",
+    targetWorkingProfessionals: "المهنيون العاملون",
+    targetCompanies: "الشركات",
+    targetManagers: "الإطارات والمديرون",
+  },
 };
