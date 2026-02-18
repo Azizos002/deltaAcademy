@@ -44,7 +44,7 @@ export default function Navbar({
                 width="48"
                 height="48"
               />
-              <div className="flex flex-col leading-tight">
+              <div className="flex flex-col items-baseline leading-tight">
                 <span className="text-xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                   {t.brand}
                 </span>
