@@ -48,7 +48,7 @@ export default function Navbar({
                 <span className="text-xl font-bold bg-gradient-to-r from-[#2970ae] via-[#ec960b] to-[#c17b3f] bg-clip-text text-transparent">
                   {t.brand}
                 </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">
+                <span className="text-[11px] font-medium tracking-wide text-[#ec960b]">
                   {t.registrationNumber}
                 </span>
               </div>
