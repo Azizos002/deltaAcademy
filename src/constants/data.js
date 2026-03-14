@@ -27,6 +27,7 @@ export const courseCategories = {
     subtitleKey: 'certifiedCoursesSubtitle',
     icon: Award,
     color: 'from-[#2970ae] to-[#ec960b]',
+    
 
     // ✅ NEW (translation keys)
     targetAudienceKeys: [
@@ -145,6 +146,7 @@ export const courseCategories = {
     subtitleKey: 'corporateTrainingSubtitle',
     icon: Briefcase,
     color: 'from-[#2970ae] to-[#c17b3f]',
+    catalogueFile: "/catalogues/formation-continue.pdf",
 
     // ✅ NEW (translation keys)
     targetAudienceKeys: [

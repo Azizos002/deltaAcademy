@@ -16,6 +16,8 @@ export const translations = {
     sending: "Sending...",
     submitError: "Submission failed. Please try again.",
 
+    //catalogue download
+    downloadCatalogue: "Download catalogue",
     // Hero Section
     heroTitle1: "Transform Your",
     heroTitle2: "Future Today",
@@ -284,6 +286,9 @@ export const translations = {
     sending: "Envoi...",
     submitError: "Échec de l'envoi. Veuillez réessayer.",
 
+    //Catalogue
+    downloadCatalogue: "Télécharger le catalogue",
+
     // Hero Section
     heroTitle1: "Transformez Votre",
     heroTitle2: "Avenir Aujourd'hui",
@@ -550,6 +555,9 @@ export const translations = {
     languageLabel: "اللغة",
     sending: "جاري الإرسال...",
     submitError: "فشل الإرسال. يرجى المحاولة مرة أخرى.",
+
+    //Catalogue
+    downloadCatalogue: "تحميل الكتالوج",
 
     // Hero Section
     heroTitle1: "حوّل",
