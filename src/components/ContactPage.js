@@ -267,7 +267,7 @@ export default function ContactPage({
                     <p className={`${theme.textSecondary} text-sm`}>
                       deltacademy2026@gmail.com
                       <br />
-                      info@deltaacademy.tn
+                      info@delta-formation.com
                     </p>
                   </div>
                 </div>

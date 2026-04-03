@@ -82,8 +82,8 @@ Add these if you use them in your code:
 
 ```
 REACT_APP_ENV=production
-REACT_APP_SITE_URL=https://deltaacademy.tn
-REACT_APP_CONTACT_EMAIL=info@deltaacademy.tn
+REACT_APP_SITE_URL=https://delta-formation.com
+REACT_APP_CONTACT_EMAIL=info@delta-formation.com
 REACT_APP_CONTACT_PHONE=+216-XX-XXX-XXX
 ```
 
@@ -107,7 +107,7 @@ REACT_APP_CONTACT_PHONE=+216-XX-XXX-XXX
    - Go to **Settings** → **Domains**
 
 2. **Add Domain**
-   - Enter your domain: `deltaacademy.tn`
+   - Enter your domain: `delta-formation.com`
    - Click **Add**
 
 3. **Configure DNS**
