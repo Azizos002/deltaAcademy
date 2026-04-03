@@ -10,6 +10,7 @@ import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
 import EnrollmentModal from './components/EnrollmentModal';
 import './styles/animations.css';
+import { applySeoMetadata } from './utils/seo';
 
 export default function ModernTrainingCenter() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,6 +49,10 @@ export default function ModernTrainingCenter() {
     localStorage.setItem('delta-language', language);
     document.documentElement.lang = language;
   }, [language]);
+
+  React.useEffect(() => {
+    applySeoMetadata({ page: currentPage, language });
+  }, [currentPage, language]);
   
   // Use theme hook
   const theme = useTheme(isDark);
