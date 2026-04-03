@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://delta-formation.com",
+  "siteName": "Delta Formation",
+  "defaultLocale": "fr_TN",
+  "defaultImagePath": "/logo_delta.png",
+  "pages": [
+    { "key": "home", "path": "/", "changefreq": "weekly", "priority": "1.0" },
+    { "key": "courses", "path": "/courses", "changefreq": "weekly", "priority": "0.9" },
+    { "key": "about", "path": "/about", "changefreq": "monthly", "priority": "0.8" },
+    { "key": "contact", "path": "/contact", "changefreq": "monthly", "priority": "0.8" }
+  ]
+}
