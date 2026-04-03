@@ -202,50 +202,51 @@ export const languageTargetProfiles = [
 export const previousFormations = [
   {
     id: 1,
-    titleKey: 'formation7Title',
-    descKey: 'formation7Desc',
-    image: '/assets/chaudFroid.jpg',
+    titleKey: "formation7Title",
+    descKey: "formation7Desc",
+    image: "/assets/chaudFroid.jpg",
     participants: 45,
-    year: 2025
+    year: 2025,
   },
   {
     id: 2,
-    titleKey: 'formation8Title',
-    descKey: 'formation8Desc',
-    image: '/assets/mecIndus.webp',
-    participants: 38,
-    year: 2025
+    titleKey: "formation10Title",
+    descKey: "formation10Desc",
+    image: "/assets/delta7.jpg",
+    participants: 28,
+    year: 2025,
   },
   {
     id: 3,
-    titleKey: 'formation9Title',
-    descKey: 'formation9Desc',
-    image: '/assets/fastFood.jpg',
+    titleKey: "formation9Title",
+    descKey: "formation9Desc",
+    image: "/assets/fastFood.jpg",
     participants: 32,
-    year: 2025
+    year: 2026,
   },
   {
     id: 4,
-    titleKey: 'formation10Title',
-    descKey: 'formation10Desc',
-    image: '/assets/delta7.jpg',
-    participants: 28,
-    year: 2025
+    titleKey: "formation8Title",
+    descKey: "formation8Desc",
+    image: "/assets/mecIndus.webp",
+    participants: 38,
+    year: 2025,
   },
   {
     id: 5,
-    titleKey: 'formation5Title',
-    descKey: 'formation5Desc',
-    image: '/assets/finance.webp',
+    titleKey: "formation5Title",
+    descKey: "formation5Desc",
+    image: "/assets/finance.webp",
     participants: 52,
-    year: 2025
+    year: 2025,
   },
   {
     id: 6,
-    titleKey: 'formation6Title',
-    descKey: 'formation6Desc',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    titleKey: "formation6Title",
+    descKey: "formation6Desc",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
     participants: 40,
-    year: 2025
-  }
+    year: 2026,
+  },
 ];

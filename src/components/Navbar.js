@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronRight, Moon, Sun, CheckCircle2, Globe } from 'lucide-react';
-import logo from '../logo_delta.png';
+import logo from '../logo-delta.png';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },

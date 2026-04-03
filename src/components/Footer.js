@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronRight, MapPin, Phone, Mail, Clock, Facebook, Instagram, Music2, MessageCircle, Wrench } from 'lucide-react';
-import logo from '../logo_delta.png';
+import logo from '../logo-delta.png';
 
 export default function Footer({ theme, language, t, navigateTo }) {
   const mixedPrograms = [
